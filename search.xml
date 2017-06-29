@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2FUnityManual.io%2F2017%2F06%2F28%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[Trouble Shooting]]></title>
+    <url>%2FUnityManual.io%2F2017%2F06%2F29%2FTrouble-Shooting%2F</url>
+    <content type="text"><![CDATA[Trouble Shooting Shadows 手游不支持软阴影 前向渲染仅支持一个方向光投影Some of my objects do not cast or receive shadows 只有不透明物体接受或者投射阴影 顶点 shader 不接受阴影，但是可以投射阴影 只有像素光照投射阴影]]></content>
       <categories>
-        <category>Manual</category>
-        <category>UnityManual</category>
+        <category>Working In Unity</category>
+        <category>Creating Gameplay</category>
+        <category>Trouble Shooting</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Importing from the Asset Store]]></title>
+    <url>%2FUnityManual.io%2F2017%2F06%2F29%2FImporting-from-the-Asset-Store%2F</url>
+    <content type="text"><![CDATA[Importing from the Asset Store Location of downloaded Asset files Mac ~/Library/Unity/Asset Store Win C:\Users\accountName\AppData\Roaming\Unity\Asset Store]]></content>
+      <categories>
+        <category>Working In Unity</category>
+        <category>Asset Workflow</category>
+        <category>Importing from the Asset Store</category>
       </categories>
   </entry>
 </search>
