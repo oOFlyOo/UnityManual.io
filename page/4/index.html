@@ -1,0 +1,2947 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/UnityManual.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/UnityManual.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/UnityManual.io/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Fly" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/UnityManual.io/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="作者懒得写">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Unity Manual">
+<meta property="og:url" content="https://ooflyoo.github.io/UnityManual.io/page/4/index.html">
+<meta property="og:site_name" content="Unity Manual">
+<meta property="og:description" content="作者懒得写">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Unity Manual">
+<meta name="twitter:description" content="作者懒得写">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/UnityManual.io/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ooflyoo.github.io/UnityManual.io/page/4/"/>
+
+
+
+
+
+  <title> Unity Manual </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/UnityManual.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Unity Manual</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/UnityManual.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/UnityManual.io/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/UnityManual.io/404/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/11/ShaderLab-Culling-Depth-Testing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/11/ShaderLab-Culling-Depth-Testing/" itemprop="url">
+                  ShaderLab: Culling & Depth Testing
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T15:20:35+08:00">
+                2017-07-11
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-26T15:05:44+08:00">
+                2017-07-26
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Shader Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/ShaderLab-Syntax/" itemprop="url" rel="index">
+                    <span itemprop="name">ShaderLab Syntax</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/ShaderLab-Syntax/ShaderLab-SubShader/" itemprop="url" rel="index">
+                    <span itemprop="name">ShaderLab SubShader</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/ShaderLab-Syntax/ShaderLab-SubShader/ShaderLab-Pass/" itemprop="url" rel="index">
+                    <span itemprop="name">ShaderLab Pass</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/ShaderLab-Syntax/ShaderLab-SubShader/ShaderLab-Pass/ShaderLab-Culling-Depth-Testing/" itemprop="url" rel="index">
+                    <span itemprop="name">ShaderLab Culling & Depth Testing</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/SL-CullAndDepth.html" target="_blank" rel="external">网址：ShaderLab: Culling &amp; Depth Testing</a></p>
+<h1 id="ShaderLab-Culling-amp-Depth-Testing"><a href="#ShaderLab-Culling-amp-Depth-Testing" class="headerlink" title="ShaderLab: Culling &amp; Depth Testing"></a>ShaderLab: Culling &amp; Depth Testing</h1><p><img src="https://docs.unity3d.com/uploads/SL/PipelineCullDepth.png" alt="PipelineCullDepth"></p>
+<h1 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h1><h2 id="Cull"><a href="#Cull" class="headerlink" title="Cull"></a>Cull</h2><ul>
+<li>控制多边形的边的剔除</li>
+<li>Back 不渲染远离观察者的背面，默认</li>
+<li>Front 不渲染面向观察者的面</li>
+<li>Off 关闭剔除</li>
+</ul>
+<h2 id="ZTest"><a href="#ZTest" class="headerlink" title="ZTest"></a>ZTest</h2><ul>
+<li>控制深度测试</li>
+<li>ZTest Less | Greater | LEqual | GEqual | Equal | NotEqual | Always</li>
+<li>默认 LEqual</li>
+</ul>
+<h2 id="Offset"><a href="#Offset" class="headerlink" title="Offset"></a>Offset</h2><ul>
+<li>Offset Factor, Units</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/11/Shader-data-types-and-precision/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/11/Shader-data-types-and-precision/" itemprop="url">
+                  Shader data types and precision
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T11:00:56+08:00">
+                2017-07-11
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-11T11:49:32+08:00">
+                2017-07-11
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Shader Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/" itemprop="url" rel="index">
+                    <span itemprop="name">Writing vertex and fragment shaders</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/Shader-data-types-and-precision/" itemprop="url" rel="index">
+                    <span itemprop="name">Shader data types and precision</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/SL-DataTypesAndPrecision.html" target="_blank" rel="external">网址：Shader data types and precision</a></p>
+<h1 id="Basic-data-types"><a href="#Basic-data-types" class="headerlink" title="Basic data types"></a>Basic data types</h1><h2 id="High-precision-float"><a href="#High-precision-float" class="headerlink" title="High precision: float"></a>High precision: float</h2><ul>
+<li>32 bits</li>
+<li>世界坐标</li>
+<li>纹理坐标</li>
+<li>复杂的三角函数和指数运算</li>
+</ul>
+<h2 id="Medium-precision-half"><a href="#Medium-precision-half" class="headerlink" title="Medium precision: half"></a>Medium precision: half</h2><ul>
+<li>16 bits，-6000~6000，大致0.001精度</li>
+<li>简单的向量</li>
+<li>方向</li>
+<li>物体坐标</li>
+<li>HDR 颜色</li>
+</ul>
+<h2 id="Low-precision-fixed"><a href="#Low-precision-fixed" class="headerlink" title="Low precision: fixed"></a>Low precision: fixed</h2><ul>
+<li>11 bits，-2~2，1/256 精度</li>
+<li>一般颜色</li>
+<li>简单计算</li>
+</ul>
+<h2 id="Integer-data-types"><a href="#Integer-data-types" class="headerlink" title="Integer data types"></a>Integer data types</h2><ul>
+<li>像 ES2 这种 GPU 会不支持</li>
+</ul>
+<h1 id="Composite-vector-matrix-types"><a href="#Composite-vector-matrix-types" class="headerlink" title="Composite vector/matrix types"></a>Composite vector/matrix types</h1><ul>
+<li>像 ES2 这种 GPU 只支持正方形矩阵</li>
+</ul>
+<h1 id="Precision-Hardware-Support-and-Performance"><a href="#Precision-Hardware-Support-and-Performance" class="headerlink" title="Precision, Hardware Support and Performance"></a>Precision, Hardware Support and Performance</h1><ul>
+<li>PC 上都是使用 32 bits 的，不管使用的是 half 还是 fixed</li>
+<li>即使是在 Mobile 上，对精度类型的占位也是不一样的</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/11/Shader-Compilation-Target-Levels/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/11/Shader-Compilation-Target-Levels/" itemprop="url">
+                  Shader Compilation Target Levels
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T10:18:46+08:00">
+                2017-07-11
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-11T10:39:49+08:00">
+                2017-07-11
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Shader Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/" itemprop="url" rel="index">
+                    <span itemprop="name">Writing vertex and fragment shaders</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/Shader-Compilation-Target-Levels/" itemprop="url" rel="index">
+                    <span itemprop="name">Shader Compilation Target Levels</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/SL-ShaderCompileTargets.html" target="_blank" rel="external">网址：Shader Compilation Target Levels</a></p>
+<h1 id="Default-compilation-target"><a href="#Default-compilation-target" class="headerlink" title="Default compilation target"></a>Default compilation target</h1><ul>
+<li>Unity 默认使用2.5</li>
+<li>使用 geometry 会导致使用4.0</li>
+<li>使用 hull 或者 domain 会导致使用4.6</li>
+</ul>
+<h1 id="Supported-pragma-target-names"><a href="#Supported-pragma-target-names" class="headerlink" title="Supported #pragma target names"></a>Supported #pragma target names</h1><ul>
+<li>Note that all OpenGL-like platforms (including mobile) are treated as “capable of shader model 3.0”. WP8/WinRT platforms (DX11 feature level 9.x) are treated as only capable of shader model 2.5.</li>
+</ul>
+<h2 id="pragma-target-2-0"><a href="#pragma-target-2-0" class="headerlink" title="#pragma target 2.0"></a>#pragma target 2.0</h2><ul>
+<li>Works on all platforms supported by Unity. DX9 shader model 2.0.</li>
+<li>Limited amount of arithmetic &amp; texture instructions; 8 interpolators; no vertex texture sampling; no derivatives in fragment shaders; no explicit LOD texture sampling.</li>
+</ul>
+<h2 id="pragma-target-2-5-default"><a href="#pragma-target-2-5-default" class="headerlink" title="#pragma target 2.5 (default)"></a>#pragma target 2.5 (default)</h2><ul>
+<li>Almost the same as 3.0 target (see below), except still only has 8 interpolators, and does not have explicit LOD texture sampling.</li>
+<li>Compiles into SM3.0 on DX9, and DX11 feature level 9.3 on Windows Phone.</li>
+</ul>
+<h2 id="pragma-target-3-0"><a href="#pragma-target-3-0" class="headerlink" title="#pragma target 3.0"></a>#pragma target 3.0</h2><ul>
+<li>DX9 shader model 3.0: derivative instructions, texture LOD sampling, 10 interpolators, more math/texture instructions allowed.</li>
+<li>Not supported on DX11 feature level 9.x GPUs (e.g. most Windows Phone devices).</li>
+<li>Might not be fully supported by some OpenGL ES 2.0 devices, depending on driver extensions present and features used.</li>
+</ul>
+<h2 id="pragma-target-3-5-or-es3-0"><a href="#pragma-target-3-5-or-es3-0" class="headerlink" title="#pragma target 3.5 (or es3.0)"></a>#pragma target 3.5 (or es3.0)</h2><ul>
+<li>OpenGL ES 3.0 capabilities (DX10 SM4.0 on D3D platforms, just without geometry shaders).</li>
+<li>Not supported on DX9, DX11 9.x (WinPhone), OpenGL ES 2.0.</li>
+<li>Supported on DX11+, OpenGL 3.2+, OpenGL ES 3+, Metal, Vulkan, PS4/XB1 consoles.</li>
+<li>Native integer operations in shaders, texture arrays, etc.</li>
+</ul>
+<h2 id="pragma-target-4-0"><a href="#pragma-target-4-0" class="headerlink" title="#pragma target 4.0"></a>#pragma target 4.0</h2><ul>
+<li>DX11 shader model 4.0.</li>
+<li>Not supported on DX9, DX11 9.x (WinPhone), OpenGL ES 2.0/3.0/3.1, Metal.</li>
+<li>Supported on DX11+, OpenGL 3.2+, OpenGL ES 3.1+AEP, Vulkan, PS4/XB1 consoles.</li>
+<li>Has geometry shaders and everything that es3.0 target has.</li>
+</ul>
+<h2 id="pragma-target-4-5-or-es3-1"><a href="#pragma-target-4-5-or-es3-1" class="headerlink" title="#pragma target 4.5 (or es3.1)"></a>#pragma target 4.5 (or es3.1)</h2><ul>
+<li>OpenGL ES 3.1 capabilities (DX11 SM5.0 on D3D platforms, just without tessellation shaders).</li>
+<li>Not supported on DX9, DX11 before SM5.0, OpenGL before 4.3 (i.e. Mac), OpenGL ES 2.0/3.0.</li>
+<li>Supported on DX11+ SM5.0, OpenGL 4.3+, OpenGL ES 3.1, Metal, Vulkan, PS4/XB1 consoles.</li>
+<li>Has compute shaders, random access texture writes, atomics etc. No geometry or tessellation shaders.</li>
+</ul>
+<h2 id="pragma-target-4-6-or-gl4-1"><a href="#pragma-target-4-6-or-gl4-1" class="headerlink" title="#pragma target 4.6 (or gl4.1)"></a>#pragma target 4.6 (or gl4.1)</h2><ul>
+<li>OpenGL 4.1 capabilities (DX11 SM5.0 on D3D platforms, just without compute shaders). This is basically the highest OpenGL level supported by Macs.</li>
+<li>Not supported on DX9, DX11 before SM5.0, OpenGL before 4.1, OpenGL ES 2.0/3.0/3.1, Metal.</li>
+<li>Supported on DX11+ SM5.0, OpenGL 4.1+, OpenGL ES 3.1+AEP, PS4/XB1 consoles.</li>
+</ul>
+<h2 id="pragma-target-5-0"><a href="#pragma-target-5-0" class="headerlink" title="#pragma target 5.0"></a>#pragma target 5.0</h2><ul>
+<li>DX11 shader model 5.0.</li>
+<li>Not supported on DX9, DX11 before SM5.0, OpenGL before 4.3 (i.e. Mac), OpenGL ES 2.0/3.0/3.1, Metal.</li>
+<li>Supported on DX11+ SM5.0, OpenGL 4.3+, OpenGL ES 3.1+AEP, Vulkan, PS4/XB1 consoles.</li>
+<li>Note that all OpenGL-like platforms (including mobile) are treated as “capable of shader model 3.0”. WP8/WinRT platforms (DX11 feature level 9.x) are treated as only capable of shader model 2.5.</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/10/Making-multiple-shader-program-variants/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/10/Making-multiple-shader-program-variants/" itemprop="url">
+                  Making multiple shader program variants
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T17:14:21+08:00">
+                2017-07-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-11T10:58:52+08:00">
+                2017-07-11
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Shader Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/" itemprop="url" rel="index">
+                    <span itemprop="name">Writing vertex and fragment shaders</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/Making-multiple-shader-program-variants/" itemprop="url" rel="index">
+                    <span itemprop="name">Making multiple shader program variants</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/SL-MultipleProgramVariants.html" target="_blank" rel="external">网址：Making multiple shader program variants</a></p>
+<h1 id="How-multi-compile-works"><a href="#How-multi-compile-works" class="headerlink" title="How multi_compile works"></a>How multi_compile works</h1><h2 id="一般的"><a href="#一般的" class="headerlink" title="一般的"></a>一般的</h2><ul>
+<li>每一个都是一个 variant，如果没有开启任何一个，默认启用第一个</li>
+</ul>
+<h2 id="特殊的"><a href="#特殊的" class="headerlink" title="特殊的"></a>特殊的</h2><ul>
+<li>对于所有的都是以“__”开头的，则默认创建一个空的，避免另外创建一个关键词</li>
+</ul>
+<h1 id="Difference-between-shader-feature-and-multi-compile"><a href="#Difference-between-shader-feature-and-multi-compile" class="headerlink" title="Difference between shader_feature and multi_compile"></a>Difference between shader_feature and multi_compile</h1><ul>
+<li>shader_feature <strong><em> 等价于 multi_compile __</em></strong></li>
+<li>shader_feature 可以在面板上设置，multi_compile 通过代码来设置</li>
+</ul>
+<h1 id="Built-in-multi-compile-shortcuts"><a href="#Built-in-multi-compile-shortcuts" class="headerlink" title="Built-in multi_compile shortcuts"></a>Built-in multi_compile shortcuts</h1><ul>
+<li>multi_compile_fwdbase compiles all variants needed by ForwardBase (forward rendering base) pass type. The variants deal with different lightmap types and main directional light having shadows on or off.</li>
+<li>multi_compile_fwdadd compiles variants for ForwardAdd (forward rendering additive) pass type. This compiles variants to handle directional, spot or point light types, and their variants with cookie textures.</li>
+<li>multi_compile_fwdadd_fullshadows - same as above, but also includes ability for the lights to have realtime shadows.</li>
+<li>multi_compile_fog expands to several variants to handle different fog types (off/linear/exp/exp2).</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/10/Built-in-shader-variables/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/10/Built-in-shader-variables/" itemprop="url">
+                  Built-in shader variables
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T16:20:42+08:00">
+                2017-07-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-10T16:34:04+08:00">
+                2017-07-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Shader Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/" itemprop="url" rel="index">
+                    <span itemprop="name">Writing vertex and fragment shaders</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/Built-in-shader-variables/" itemprop="url" rel="index">
+                    <span itemprop="name">Built-in shader variables</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/SL-UnityShaderVariables.html" target="_blank" rel="external">网址：Built-in shader variables</a></p>
+<h1 id="Transformations"><a href="#Transformations" class="headerlink" title="Transformations"></a>Transformations</h1><ul>
+<li>都是 float4</li>
+<li>UNITY_MATRIX_MVP    Current model <em> view </em> projection matrix.</li>
+<li>UNITY_MATRIX_MV Current model * view matrix.</li>
+<li>UNITY_MATRIX_V  Current view matrix.</li>
+<li>UNITY_MATRIX_P  Current projection matrix.</li>
+<li>UNITY_MATRIX_VP Current view * projection matrix.</li>
+<li>UNITY_MATRIX_T_MV   Transpose of model * view matrix.</li>
+<li>UNITY_MATRIX_IT_MV  Inverse transpose of model * view matrix.</li>
+<li>_Object2World   Current model matrix.</li>
+<li>_World2Object   Inverse of current world matrix.</li>
+</ul>
+<h1 id="Camera-and-screen"><a href="#Camera-and-screen" class="headerlink" title="Camera and screen"></a>Camera and screen</h1><ul>
+<li>_WorldSpaceCameraPos    float3  World space position of the camera.</li>
+<li>_ProjectionParams   float4  x is 1.0 (or –1.0 if currently rendering with a flipped projection matrix), y is the camera’s near plane, z is the camera’s far plane and w is 1/FarPlane.</li>
+<li>_ScreenParams   float4  x is the camera’s render target width in pixels, y is the camera’s render target height in pixels, z is 1.0 + 1.0/width and w is 1.0 + 1.0/height.</li>
+<li>_ZBufferParams  float4  Used to linearize Z buffer values. x is (1-far/near), y is (far/near), z is (x/far) and w is (y/far).</li>
+<li>unity_OrthoParams   float4  x is orthographic camera’s width, y is orthographic camera’s height, z is unused and w is 1.0 when camera is orthographic, 0.0 when perspective.</li>
+<li>unity_CameraProjection  float4x4    Camera’s projection matrix.</li>
+<li>unity_CameraInvProjection   float4x4    Inverse of camera’s projection matrix.</li>
+<li>unity_CameraWorldClipPlanes[6]  float4  Camera frustum plane world space equations, in this order: left, right, bottom, top, near, far.</li>
+</ul>
+<h1 id="Time"><a href="#Time" class="headerlink" title="Time"></a>Time</h1><ul>
+<li>_Time   float4  Time since level load (t/20, t, t<em>2, t</em>3), use to animate things inside the shaders.</li>
+<li>_SinTime    float4  Sine of time: (t/8, t/4, t/2, t).</li>
+<li>_CosTime    float4  Cosine of time: (t/8, t/4, t/2, t).</li>
+<li>unity_DeltaTime float4  Delta time: (dt, 1/dt, smoothDt, 1/smoothDt).</li>
+</ul>
+<h1 id="Lighting"><a href="#Lighting" class="headerlink" title="Lighting"></a>Lighting</h1><ul>
+<li>_LightColor0 (declared in Lighting.cginc)   fixed4  Light color.</li>
+<li>_WorldSpaceLightPos0    float4  Directional lights: (world space direction, 0). Other lights: (world space position, 1).</li>
+<li>_LightMatrix0 (declared in AutoLight.cginc) float4x4    World-to-light matrix. Used to sample cookie &amp; attenuation textures.</li>
+<li>unity_4LightPosX0, unity_4LightPosY0, unity_4LightPosZ0 float4  (ForwardBase pass only) world space positions of first four non-important point lights.</li>
+<li>unity_4LightAtten0  float4  (ForwardBase pass only) attenuation factors of first four non-important point lights.</li>
+<li><p>unity_LightColor    half4[4]    (ForwardBase pass only) colors of of first four non-important point lights.</p>
+</li>
+<li><p>_LightColor float4  Light color.</p>
+</li>
+<li><p>_LightMatrix0   float4x4    World-to-light matrix. Used to sample cookie &amp; attenuation textures.</p>
+</li>
+<li><p>unity_LightColor    half4[8]    Light colors.</p>
+</li>
+<li>unity_LightPosition float4[8]   View-space light positions. (-direction,0) for directional lights; (position,1) for point/spot lights.</li>
+<li>unity_LightAtten    half4[8]    Light attenuation factors. x is cos(spotAngle/2) or –1 for non-spot lights; y is 1/cos(spotAngle/4) or 1 for non-spot lights; z is quadratic attenuation; w is squared light range.</li>
+<li>unity_SpotDirection float4[8]   View-space spot light positions; (0,0,1,0) for non-spot lights.</li>
+</ul>
+<h1 id="Fog-and-Ambient"><a href="#Fog-and-Ambient" class="headerlink" title="Fog and Ambient"></a>Fog and Ambient</h1><ul>
+<li>unity_AmbientSky    fixed4  Sky ambient lighting color in gradient ambient lighting case.</li>
+<li>unity_AmbientEquator    fixed4  Equator ambient lighting color in gradient ambient lighting case.</li>
+<li>unity_AmbientGround fixed4  Ground ambient lighting color in gradient ambient lighting case.<br>UNITY_LIGHTMODEL_AMBIENT    fixed4  Ambient lighting color (sky color in gradient ambient case). Legacy variable.</li>
+<li>unity_FogColor  fixed4  Fog color.</li>
+<li>unity_FogParams float4  Parameters for fog calculation: (density / sqrt(ln(2)), density / ln(2), –1/(end-start), end/(end-start)). x is useful for Exp2 fog mode, y for Exp mode, z and w for Linear mode.</li>
+</ul>
+<h1 id="Various"><a href="#Various" class="headerlink" title="Various"></a>Various</h1><ul>
+<li>unity_LODFade   float4  Level-of-detail fade when using LODGroup. x is fade (0..1), y is fade quantized to 16 levels, z and w unused.</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/10/Built-in-shader-helper-functions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/10/Built-in-shader-helper-functions/" itemprop="url">
+                  Built-in shader helper functions
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T15:59:30+08:00">
+                2017-07-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-10T16:20:31+08:00">
+                2017-07-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Shader Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/" itemprop="url" rel="index">
+                    <span itemprop="name">Writing vertex and fragment shaders</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/Built-in-shader-helper-functions/" itemprop="url" rel="index">
+                    <span itemprop="name">Built-in shader helper functions</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/SL-BuiltinFunctions.html" target="_blank" rel="external">网址：Built-in shader helper functions</a></p>
+<h1 id="Built-in-shader-helper-functions"><a href="#Built-in-shader-helper-functions" class="headerlink" title="Built-in shader helper functions"></a>Built-in shader helper functions</h1><h2 id="Vertex-transformation-functions-in-UnityCG-cginc"><a href="#Vertex-transformation-functions-in-UnityCG-cginc" class="headerlink" title="Vertex transformation functions in UnityCG.cginc"></a>Vertex transformation functions in UnityCG.cginc</h2><ul>
+<li>float4 UnityObjectToClipPos(float3 pos) 将点从物体坐标空间转到齐次坐标</li>
+<li>float3 UnityObjectToViewPos(float3 pos) 将点从物体坐标空间转到视图坐标</li>
+</ul>
+<h2 id="Generic-helper-functions-in-UnityCG-cginc"><a href="#Generic-helper-functions-in-UnityCG-cginc" class="headerlink" title="Generic helper functions in UnityCG.cginc"></a>Generic helper functions in UnityCG.cginc</h2><ul>
+<li>float3 WorldSpaceViewDir (float4 v) Returns world space direction (not normalized) from given object space vertex position towards the camera.</li>
+<li>float3 ObjSpaceViewDir (float4 v)   Returns object space direction (not normalized) from given object space vertex position towards the camera.</li>
+<li>float2 ParallaxOffset (half h, half height, half3 viewDir)  calculates UV offset for parallax normal mapping.</li>
+<li>fixed Luminance (fixed3 c)  Converts color to luminance (grayscale).</li>
+<li>fixed3 DecodeLightmap (fixed4 color)    Decodes color from Unity lightmap (RGBM or dLDR depending on platform).</li>
+<li>float4 EncodeFloatRGBA (float v)    Encodes [0..1) range float into RGBA color, for storage in low precision render target.</li>
+<li>float DecodeFloatRGBA (float4 enc)  Decodes RGBA color into a float.</li>
+<li>float2 EncodeFloatRG (float v)  Encodes [0..1) range float into a float2.</li>
+<li>float DecodeFloatRG (float2 enc)    Decodes a previously-encoded RG float.</li>
+<li>float2 EncodeViewNormalStereo (float3 n)    Encodes view space normal into two numbers in 0..1 range.</li>
+<li>float3 DecodeViewNormalStereo (float4 enc4) Decodes view space normal from enc4.xy.</li>
+</ul>
+<h2 id="Forward-rendering-helper-functions-in-UnityCG-cginc"><a href="#Forward-rendering-helper-functions-in-UnityCG-cginc" class="headerlink" title="Forward rendering helper functions in UnityCG.cginc"></a>Forward rendering helper functions in UnityCG.cginc</h2><ul>
+<li>float3 WorldSpaceLightDir (float4 v)    Computes world space direction (not normalized) to light, given object space vertex position.</li>
+<li>float3 ObjSpaceLightDir (float4 v)  Computes object space direction (not normalized) to light, given object space vertex position.</li>
+<li>float3 Shade4PointLights (…)  Computes illumination from four point lights, with light data tightly packed into vectors. Forward rendering uses this to compute per-vertex lighting.</li>
+</ul>
+<h2 id="Screen-space-helper-functions-in-UnityCG-cginc"><a href="#Screen-space-helper-functions-in-UnityCG-cginc" class="headerlink" title="Screen-space helper functions in UnityCG.cginc"></a>Screen-space helper functions in UnityCG.cginc</h2><ul>
+<li>float4 ComputeScreenPos (float4 clipPos)    Computes texture coordinate for doing a screenspace-mapped texture sample. Input is clip space position.</li>
+<li>float4 ComputeGrabScreenPos (float4 clipPos)    Computes texture coordinate for sampling a GrabPass texure. Input is clip space position.</li>
+</ul>
+<h2 id="Vertex-lit-helper-functions-in-UnityCG-cginc"><a href="#Vertex-lit-helper-functions-in-UnityCG-cginc" class="headerlink" title="Vertex-lit helper functions in UnityCG.cginc"></a>Vertex-lit helper functions in UnityCG.cginc</h2><ul>
+<li>float3 ShadeVertexLights (float4 vertex, float3 normal) Computes illumination from four per-vertex lights and ambient, given object space position &amp; normal.</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/10/Predefined-Shader-preprocessor-macros/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/10/Predefined-Shader-preprocessor-macros/" itemprop="url">
+                  Predefined Shader preprocessor macros
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T15:34:33+08:00">
+                2017-07-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-10T15:59:11+08:00">
+                2017-07-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Shader Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/" itemprop="url" rel="index">
+                    <span itemprop="name">Writing vertex and fragment shaders</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/Predefined-Shader-preprocessor-macros/" itemprop="url" rel="index">
+                    <span itemprop="name">Predefined Shader preprocessor macros</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/SL-BuiltinMacros.html" target="_blank" rel="external">网址：Predefined Shader preprocessor macros</a></p>
+<h1 id="Target-platform"><a href="#Target-platform" class="headerlink" title="Target platform"></a>Target platform</h1><h1 id="Shader-target-model"><a href="#Shader-target-model" class="headerlink" title="Shader target model"></a>Shader target model</h1><h1 id="Unity-version"><a href="#Unity-version" class="headerlink" title="Unity version"></a>Unity version</h1><h1 id="Platform-difference-helpers"><a href="#Platform-difference-helpers" class="headerlink" title="Platform difference helpers"></a>Platform difference helpers</h1><h1 id="Shadow-mapping-macros"><a href="#Shadow-mapping-macros" class="headerlink" title="Shadow mapping macros"></a>Shadow mapping macros</h1><h1 id="Texture-Sampler-declaration-macros"><a href="#Texture-Sampler-declaration-macros" class="headerlink" title="Texture/Sampler declaration macros"></a>Texture/Sampler declaration macros</h1><h1 id="Surface-Shader-pass-indicators"><a href="#Surface-Shader-pass-indicators" class="headerlink" title="Surface Shader pass indicators"></a>Surface Shader pass indicators</h1><hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/10/Built-in-shader-include-files/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/10/Built-in-shader-include-files/" itemprop="url">
+                  Built-in shader include files
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T15:16:11+08:00">
+                2017-07-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-10T15:42:34+08:00">
+                2017-07-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Shader Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/" itemprop="url" rel="index">
+                    <span itemprop="name">Writing vertex and fragment shaders</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/Built-in-shader-include-files/" itemprop="url" rel="index">
+                    <span itemprop="name">Built-in shader include files</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/SL-BuiltinIncludes.html" target="_blank" rel="external">网址：Built-in shader include files</a></p>
+<h1 id="Built-in-shader-include-files"><a href="#Built-in-shader-include-files" class="headerlink" title="Built-in shader include files"></a>Built-in shader include files</h1><ul>
+<li>HLSLSupport.cginc - (automatically included) Helper macros and definitions for cross-platform shader compilation.</li>
+<li>UnityShaderVariables.cginc - (automatically included) Commonly used global variables.</li>
+<li>UnityCG.cginc - commonly used helper functions.</li>
+<li>AutoLight.cginc - lighting &amp; shadowing functionality, e.g. surface shaders use this file internally.</li>
+<li>Lighting.cginc - standard surface shader lighting models; automatically included when you’re writing surface shaders.</li>
+<li>TerrainEngine.cginc - helper functions for Terrain &amp; Vegetation shaders.</li>
+</ul>
+<p>UnityCG.cginc</p>
+<h2 id="Data-structures-in-UnityCG-cginc"><a href="#Data-structures-in-UnityCG-cginc" class="headerlink" title="Data structures in UnityCG.cginc"></a>Data structures in UnityCG.cginc</h2><ul>
+<li>struct appdata_base: vertex shader input with position, normal, one texture coordinate.</li>
+<li>struct appdata_tan: vertex shader input with position, normal, tangent, one texture coordinate.</li>
+<li>struct appdata_full: vertex shader input with position, normal, tangent, vertex color and two texture coordinates.</li>
+<li>struct appdata_img: vertex shader input with position and one texture coordinate.</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/10/Providing-vertex-data-to-vertex-programs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/10/Providing-vertex-data-to-vertex-programs/" itemprop="url">
+                  Providing vertex data to vertex programs
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T15:04:03+08:00">
+                2017-07-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-10T15:05:43+08:00">
+                2017-07-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Shader Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/" itemprop="url" rel="index">
+                    <span itemprop="name">Writing vertex and fragment shaders</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/Providing-vertex-data-to-vertex-programs/" itemprop="url" rel="index">
+                    <span itemprop="name">Providing vertex data to vertex programs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/SL-VertexProgramInputs.html" target="_blank" rel="external">网址：Providing vertex data to vertex Providing-vertex-data-to-vertex-programs.md</a></p>
+<h1 id="Providing-vertex-data-to-vertex-programs"><a href="#Providing-vertex-data-to-vertex-programs" class="headerlink" title="Providing vertex data to vertex programs"></a>Providing vertex data to vertex programs</h1><ul>
+<li>appdata_base: position, normal and one texture coordinate.</li>
+<li>appdata_tan: position, tangent, normal and one texture coordinate.</li>
+<li><p>appdata_full: position, tangent, normal, four texture coordinates and color.</p>
+</li>
+<li><p>POSITION is the vertex position, typically a float3 or float4.</p>
+</li>
+<li>NORMAL is the vertex normal, typically a float3.</li>
+<li>TEXCOORD0 is the first UV coordinate, typically float2, float3 or float4.</li>
+<li>TEXCOORD1, TEXCOORD2 and TEXCOORD3 are the 2nd, 3rd and 4th UV coordinates, respectively.</li>
+<li>TANGENT is the tangent vector (used for normal mapping), typically a float4.</li>
+<li>COLOR is the per-vertex color, typically a float4.</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/10/Accessing-shader-properties-in-Cg-HLSL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/10/Accessing-shader-properties-in-Cg-HLSL/" itemprop="url">
+                  Accessing shader properties in Cg/HLSL
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T14:51:25+08:00">
+                2017-07-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-10T14:53:56+08:00">
+                2017-07-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Shader Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/" itemprop="url" rel="index">
+                    <span itemprop="name">Writing vertex and fragment shaders</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/Accessing-shader-properties-in-Cg-HLSL/" itemprop="url" rel="index">
+                    <span itemprop="name">Accessing shader properties in Cg/HLSL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/SL-PropertiesInPrograms.html" target="_blank" rel="external">网址：Accessing shader properties in Cg/HLSL</a></p>
+<h1 id="Accessing-shader-properties-in-Cg-HLSL"><a href="#Accessing-shader-properties-in-Cg-HLSL" class="headerlink" title="Accessing shader properties in Cg/HLSL"></a>Accessing shader properties in Cg/HLSL</h1><h2 id="Property-types-in-ShaderLab-map-to-Cg-HLSL-variable-types-this-way"><a href="#Property-types-in-ShaderLab-map-to-Cg-HLSL-variable-types-this-way" class="headerlink" title="Property types in ShaderLab map to Cg/HLSL variable types this way"></a>Property types in ShaderLab map to Cg/HLSL variable types this way</h2><ul>
+<li>Color and Vector properties map to float4, half4 or fixed4 variables.</li>
+<li>Range and Float properties map to float, half or fixed variables.</li>
+<li>Texture properties map to sampler2D variables for regular (2D) textures; Cubemaps map to samplerCUBE; and 3D textures map to sampler3D.</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/UnityManual.io/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/UnityManual.io/">1</a><span class="space">&hellip;</span><a class="page-number" href="/UnityManual.io/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/UnityManual.io/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/UnityManual.io/page/7/">7</a><a class="extend next" rel="next" href="/UnityManual.io/page/5/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/UnityManual.io/images/avatar.jpg"
+               alt="Fly" />
+          <p class="site-author-name" itemprop="name">Fly</p>
+           
+              <p class="site-description motion-element" itemprop="description">作者懒得写</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/UnityManual.io/">
+                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/UnityManual.io/categories/index.html">
+                <span class="site-state-item-count">111</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/oOFlyOo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/qq393830887?viewmode=list" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  CSDN
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fly</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/UnityManual.io/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/UnityManual.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/UnityManual.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/UnityManual.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/UnityManual.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/UnityManual.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/UnityManual.io/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/UnityManual.io/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/UnityManual.io/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/UnityManual.io/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/UnityManual.io/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/UnityManual.io/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/UnityManual.io/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

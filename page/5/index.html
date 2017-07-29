@@ -1,0 +1,2821 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/UnityManual.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/UnityManual.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/UnityManual.io/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Fly" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/UnityManual.io/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="作者懒得写">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Unity Manual">
+<meta property="og:url" content="https://ooflyoo.github.io/UnityManual.io/page/5/index.html">
+<meta property="og:site_name" content="Unity Manual">
+<meta property="og:description" content="作者懒得写">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Unity Manual">
+<meta name="twitter:description" content="作者懒得写">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/UnityManual.io/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ooflyoo.github.io/UnityManual.io/page/5/"/>
+
+
+
+
+
+  <title> Unity Manual </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/UnityManual.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Unity Manual</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/UnityManual.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/UnityManual.io/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/UnityManual.io/404/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/10/Writing-vertex-and-fragment-shaders/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/10/Writing-vertex-and-fragment-shaders/" itemprop="url">
+                  Writing vertex and fragment shaders
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T14:24:00+08:00">
+                2017-07-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-10T14:34:39+08:00">
+                2017-07-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Shader Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/" itemprop="url" rel="index">
+                    <span itemprop="name">Writing vertex and fragment shaders</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/SL-ShaderPrograms.html" target="_blank" rel="external">网址：Writing vertex and fragment shaders</a></p>
+<h1 id="HLSL-snippets"><a href="#HLSL-snippets" class="headerlink" title="HLSL snippets"></a>HLSL snippets</h1><ul>
+<li>#pragma vertex name - compile function name as the vertex shader.</li>
+<li>#pragma fragment name - compile function name as the fragment shader.</li>
+<li>#pragma geometry name - compile function name as DX10 geometry shader. Having this option automatically turns on - #pragma target 4.0, described below.</li>
+<li>#pragma hull name - compile function name as DX11 hull shader. Having this option automatically turns on - #pragma target 5.0, described below.</li>
+<li><p>#pragma domain name - compile function name as DX11 domain shader. Having this option automatically turns on #pragma target 5.0, described below.</p>
+</li>
+<li><p>#pragma target name - which shader target to compile to. See Shader Compilation Targets page for details.</p>
+</li>
+<li>#pragma only_renderers space separated names - compile shader only for given renderers. By default shaders are compiled for all renderers. See Renderers below for details.</li>
+<li>#pragma exclude_renderers space separated names - do not compile shader for given renderers. By default shaders are compiled for all renderers. See Renderers below for details.</li>
+<li>#pragma multi_compile … - for working with multiple shader variants.</li>
+<li>#pragma enable_d3d11_debug_symbols - generate debug information for shaders compiled for DirectX 11, this will allow you to debug shaders via Visual Studio 2012 (or higher) Graphics debugger.</li>
+<li>#pragma hardware_tier_variants renderer name - generate multiple shader hardware variants of each compiled shader, for each hardware tier that could run the selected renderer. See Renderers below for details.</li>
+</ul>
+<h1 id="Rendering-platforms"><a href="#Rendering-platforms" class="headerlink" title="Rendering platforms"></a>Rendering platforms</h1><ul>
+<li>d3d9 - Direct3D 9</li>
+<li>d3d11 - Direct3D 11/12</li>
+<li>glcore - OpenGL 3.x/4.x</li>
+<li>gles - OpenGL ES 2.0</li>
+<li>gles3 - OpenGL ES 3.x</li>
+<li>metal - iOS/Mac Metal</li>
+<li>vulkan - Vulkan</li>
+<li>d3d11_9x - Direct3D 11 9.x feature level, as commonly used on WSA platforms</li>
+<li>xboxone - Xbox One</li>
+<li>ps4 - PlayStation 4</li>
+<li>psp2 - PlayStation Vita</li>
+<li>n3ds - Nintendo 3DS</li>
+<li>wiiu - Nintendo Wii U</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/07/Optimizing-Shader-Load-Time/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/07/Optimizing-Shader-Load-Time/" itemprop="url">
+                  Optimizing Shader Load Time
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-07T18:18:47+08:00">
+                2017-07-07
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-10T10:58:14+08:00">
+                2017-07-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Overview</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Optimizing-graphics-performance/" itemprop="url" rel="index">
+                    <span itemprop="name">Optimizing graphics performance</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Optimizing-graphics-performance/Optimizing-Shader-Load-Time/" itemprop="url" rel="index">
+                    <span itemprop="name">Optimizing Shader Load Time</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/OptimizingShaderLoadTime.html" target="_blank" rel="external">网址：Optimizing Shader Load Time</a></p>
+<h1 id="Optimizing-Shader-Load-Time"><a href="#Optimizing-Shader-Load-Time" class="headerlink" title="Optimizing Shader Load Time"></a>Optimizing Shader Load Time</h1><ul>
+<li>太多 shader 影响 build time，还会增加游戏大小</li>
+<li>读取太多 shader 会影响启动时间，也会增加内存</li>
+</ul>
+<h1 id="Shader-build-time-stripping"><a href="#Shader-build-time-stripping" class="headerlink" title="Shader build time stripping"></a>Shader build time stripping</h1><ul>
+<li>Unity 会在 Build 的时候检查用到的 shader</li>
+<li>检查 #pragma shader_feature 的使用</li>
+<li>检查场景中 Fog 和 Lightmapping 的使用</li>
+</ul>
+<h1 id="Default-Unity-shader-loading-behavior"><a href="#Default-Unity-shader-loading-behavior" class="headerlink" title="Default Unity shader loading behavior"></a>Default Unity shader loading behavior</h1><ul>
+<li>Unity 读取 shader 的时候，只有当使用到具体的变种的 shader 的时候，才会去创建，这样子可以减少读取时间还有内存占用</li>
+</ul>
+<h2 id="Shader-Variant-Collections"><a href="#Shader-Variant-Collections" class="headerlink" title="Shader Variant Collections"></a>Shader Variant Collections</h2><ul>
+<li>ShaderVariantCollection 用于标记 shader 关键字</li>
+<li>Graphics Settings 可以根据场景状况显示使用的 shader variant（包括运行时）</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/07/Frame-Debugger/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/07/Frame-Debugger/" itemprop="url">
+                  Frame Debugger
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-07T16:07:05+08:00">
+                2017-07-07
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-07T18:05:09+08:00">
+                2017-07-07
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Overview</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Optimizing-graphics-performance/" itemprop="url" rel="index">
+                    <span itemprop="name">Optimizing graphics performance</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Optimizing-graphics-performance/Frame-Debugger/" itemprop="url" rel="index">
+                    <span itemprop="name">Frame Debugger</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/FrameDebugger.html" target="_blank" rel="external">网址：Frame Debugger</a></p>
+<h1 id="Remote-Frame-Debugger"><a href="#Remote-Frame-Debugger" class="headerlink" title="Remote Frame Debugger"></a>Remote Frame Debugger</h1><ul>
+<li>iOS 不支持</li>
+<li>发包时候得开启 Development Build、</li>
+<li>PC 得开启 Run in Background</li>
+<li>游戏得在前台，特别注意 PC 包，无法和 Editor 同时在前台</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/07/Modeling-characters-for-optimal-performance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/07/Modeling-characters-for-optimal-performance/" itemprop="url">
+                  Modeling characters for optimal performance
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-07T15:27:57+08:00">
+                2017-07-07
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-07T16:07:13+08:00">
+                2017-07-07
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Overview</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Optimizing-graphics-performance/" itemprop="url" rel="index">
+                    <span itemprop="name">Optimizing graphics performance</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Optimizing-graphics-performance/Modeling-characters-for-optimal-performance/" itemprop="url" rel="index">
+                    <span itemprop="name">Modeling characters for optimal performance</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/ModelingOptimizedCharacters.html" target="_blank" rel="external">网址：Modeling characters for optimal performance</a></p>
+<h1 id="Modeling-characters-for-optimal-performance"><a href="#Modeling-characters-for-optimal-performance" class="headerlink" title="Modeling characters for optimal performance"></a>Modeling characters for optimal performance</h1><h2 id="Use-a-single-skinned-Mesh-Renderer"><a href="#Use-a-single-skinned-Mesh-Renderer" class="headerlink" title="Use a single skinned Mesh Renderer"></a>Use a single skinned Mesh Renderer</h2><ul>
+<li>Unity 使用剔除和包围盒来优化动画</li>
+<li>限制是使用一个动画组件和一个蒙皮网格</li>
+</ul>
+<h1 id="Use-as-few-materials-as-possible"><a href="#Use-as-few-materials-as-possible" class="headerlink" title="Use as few materials as possible"></a>Use as few materials as possible</h1><ul>
+<li>一般一个模型一个 material 就行了，除非是为了使用不一样的 shader，一般一个模型两到三个材质球就足够了</li>
+</ul>
+<h1 id="Use-as-few-bones-as-possible"><a href="#Use-as-few-bones-as-possible" class="headerlink" title="Use as few bones as possible"></a>Use as few bones as possible</h1><ul>
+<li>PC 一般50~60骨骼</li>
+<li>手机低于30</li>
+</ul>
+<h1 id="Polygon-count"><a href="#Polygon-count" class="headerlink" title="Polygon count"></a>Polygon count</h1><ul>
+<li>PC 一般1500~4000个面</li>
+<li>手机一般300~1500个面</li>
+</ul>
+<h1 id="Keep-forward-and-inverse-kinematics-separate"><a href="#Keep-forward-and-inverse-kinematics-separate" class="headerlink" title="Keep forward and inverse kinematics separate"></a>Keep forward and inverse kinematics separate</h1><ul>
+<li>When animations are imported, a model’s inverse kinematic (IK) nodes are baked into forward kinematics (FK) and as a result, Unity doesn’t need the IK nodes at all. However, if they are left in the model then they will have a CPU overhead even though they don’t affect the animation. You can delete the redundant IK nodes in Unity or in the modeling tool, according to your preference. Ideally, you should keep separate IK and FK hierarchies during modeling to make it easier to remove the IK nodes when necessary.</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/07/Draw-call-batching/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/07/Draw-call-batching/" itemprop="url">
+                  Draw call batching
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-07T10:17:42+08:00">
+                2017-07-07
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-07T17:23:55+08:00">
+                2017-07-07
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Overview</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Optimizing-graphics-performance/" itemprop="url" rel="index">
+                    <span itemprop="name">Optimizing graphics performance</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Optimizing-graphics-performance/Draw-call-batching/" itemprop="url" rel="index">
+                    <span itemprop="name">Draw call batching</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/DrawCallBatching.html" target="_blank" rel="external">网址：Draw call batching</a></p>
+<h1 id="Draw-call-batching"><a href="#Draw-call-batching" class="headerlink" title="Draw call batching"></a>Draw call batching</h1><ol>
+<li>动态合批：for small enough Meshes, this transforms their vertices on the CPU, groups many similar vertices together, and draws them all in one go.</li>
+<li>静态合批： combines static (not moving) GameObjects into big Meshes, and renders them in a faster way.</li>
+</ol>
+<ul>
+<li>动态合批会增加 CPU 消耗，静态合批会增加内存和存储消耗</li>
+</ul>
+<h2 id="Material-set-up-for-batching"><a href="#Material-set-up-for-batching" class="headerlink" title="Material set-up for batching"></a>Material set-up for batching</h2><ul>
+<li>只有共用一个 material 的物体可以合批</li>
+<li>如果两个 material 仅仅是贴图不一样，可以合并图集</li>
+<li>阴影可以动态合批，因为使用的相同的 pass</li>
+</ul>
+<h1 id="Dynamic-batching"><a href="#Dynamic-batching" class="headerlink" title="Dynamic batching"></a>Dynamic batching</h1><ul>
+<li>由于需要在 CPU 将所有物体的顶点转到世界坐标，所以仅对小物体有更好的优化效果</li>
+</ul>
+<h2 id="限制要求"><a href="#限制要求" class="headerlink" title="限制要求"></a>限制要求</h2><ul>
+<li>Batching dynamic GameObjects has certain overhead per vertex, so batching is applied only to Meshes containing fewer than 900 vertex attributes in total.<ul>
+<li>If your Shader is using Vertex Position, Normal and single UV, then you can batch up to 300 verts, while if your Shader is using Vertex Position, Normal, UV0, UV1 and Tangent, then only 180 verts.</li>
+<li>Note: attribute count limit might be changed in future.</li>
+</ul>
+</li>
+<li>GameObjects are not batched if they contain mirroring on the transform (for example GameObject A with +1 scale and GameObject B with –1 scale cannot be batched together).</li>
+<li>Using different Material instances causes GameObjects not to batch together, even if they are essentially the same. The exception is shadow caster rendering.</li>
+<li>GameObjects with lightmaps have additional renderer parameters: lightmap index and offset/scale into the lightmap. Generally, dynamic lightmapped GameObjects should point to exactly the same lightmap location to be batched.</li>
+<li>Multi-pass Shaders break batching.<ul>
+<li>Almost all Unity Shaders support several Lights in forward rendering, effectively doing additional passes for them. The draw calls for “additional per-pixel lights” are not batched.</li>
+<li>The Legacy Deferred (light pre-pass) rendering path has dynamic batching disabled, because it has to draw GameObjects twice.</li>
+</ul>
+</li>
+</ul>
+<h1 id="Static-batching"><a href="#Static-batching" class="headerlink" title="Static batching"></a>Static batching</h1><ul>
+<li>一般比动态合批更有效率（不消耗 CPU 转换顶点），但是需要更多的内存</li>
+<li>并不减少 draw calls，减少状态转换</li>
+<li>Batches are limited to 64k vertices and 64k indices on most platforms (48k indices on OpenGLES, 32k indices on macOS).</li>
+<li>是在 Build Player 阶段进行的合并网格（尽管如此还是得开启 read write enable，并且会同时存在合并后的网格和原始网格）</li>
+</ul>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><ul>
+<li>Currently, only Mesh Renderers, Trail Renderers, Line Renderers, Particle Systems and Sprite Renderers are batched. This means that skinned Meshes, Cloth, and other types of rendering components are not batched.</li>
+<li>Semi-transparent Shaders usually require GameObjects to be rendered in back-to-front order for transparency to work. Unity first orders GameObjects in this order, and then tries to batch them, but because the order must be strictly satisfied, this often means less batching can be achieved than with opaque GameObjects.</li>
+<li>Manually combining GameObjects that are close to each other can be a very good alternative to draw call batching. For example, a static cupboard with lots of drawers often makes sense to just combine into a single Mesh, either in a 3D modeling application or using Mesh.CombineMeshes.</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/06/Directional-light-shadows/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/06/Directional-light-shadows/" itemprop="url">
+                  Directional light shadows
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T15:41:37+08:00">
+                2017-07-06
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-06T17:02:40+08:00">
+                2017-07-06
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Overview</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Lighting/" itemprop="url" rel="index">
+                    <span itemprop="name">Lighting</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Lighting/Shadows/" itemprop="url" rel="index">
+                    <span itemprop="name">Shadows</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Lighting/Shadows/Directional-light-shadows/" itemprop="url" rel="index">
+                    <span itemprop="name">Directional light shadows</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/DirLightShadows.html" target="_blank" rel="external">Directional light shadows</a></p>
+<h1 id="Shadow-cascades"><a href="#Shadow-cascades" class="headerlink" title="Shadow cascades"></a>Shadow cascades</h1><ul>
+<li>cascaded shadow maps 虽然会增大内存，但是也比纯增加分辨率来得好</li>
+</ul>
+<h1 id="Shadow-distance"><a href="#Shadow-distance" class="headerlink" title="Shadow distance"></a>Shadow distance</h1><ul>
+<li>shadow cascades 在手机上不支持</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/06/Graphics-Command-Buffers/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/06/Graphics-Command-Buffers/" itemprop="url">
+                  Graphics Command Buffers
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T14:47:44+08:00">
+                2017-07-06
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-06T15:33:15+08:00">
+                2017-07-06
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Overview</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Advanced-Rendering-Features/" itemprop="url" rel="index">
+                    <span itemprop="name">Advanced Rendering Features</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Advanced-Rendering-Features/Graphics-Command-Buffers/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Command Buffers</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/GraphicsCommandBuffers.html" target="_blank" rel="external">Graphics Command Buffers</a></p>
+<ul>
+<li>A high-level overview of how cameras render scene in Unity is shown below. At each point marked with a green dot, you can add command buffers to execute your commands.<br><img src="https://docs.unity3d.com/uploads/SL/CameraRenderFlowCmdBuffers.svg" alt="CameraRenderFlowCmdBuffers"></li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/06/Light-troubleshooting-and-performance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/06/Light-troubleshooting-and-performance/" itemprop="url">
+                  Light troubleshooting and performance
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T11:48:14+08:00">
+                2017-07-06
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-20T10:07:24+08:00">
+                2017-07-20
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Overview</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Lighting/" itemprop="url" rel="index">
+                    <span itemprop="name">Lighting</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Lighting/Global-Illumination/" itemprop="url" rel="index">
+                    <span itemprop="name">Global Illumination</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Lighting/Global-Illumination/Light-troubleshooting-and-performance/" itemprop="url" rel="index">
+                    <span itemprop="name">Light troubleshooting and performance</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/LightPerformance.html" target="_blank" rel="external">Light troubleshooting and performance</a></p>
+<h1 id="Shadow-performance"><a href="#Shadow-performance" class="headerlink" title="Shadow performance"></a>Shadow performance</h1><ul>
+<li>软阴影比起硬阴影，会更多的影响 GPU，CPU 消耗是相同的</li>
+</ul>
+<h1 id="How-the-size-of-a-shadow-map-is-calculated"><a href="#How-the-size-of-a-shadow-map-is-calculated" class="headerlink" title="How the size of a shadow map is calculated"></a>How the size of a shadow map is calculated</h1><ul>
+<li>点光源比起其它光源更限制贴图大小，是因为使用了立方体贴图阴影，必须同时载入6张图</li>
+</ul>
+<h1 id="Troubleshooting-shadows"><a href="#Troubleshooting-shadows" class="headerlink" title="Troubleshooting shadows"></a>Troubleshooting shadows</h1><ul>
+<li>如果发现没有阴影可以根据以下去查</li>
+</ul>
+<ol>
+<li>旧显卡可能不支持阴影</li>
+<li>Quality Settings 可以关闭阴影</li>
+<li>Mesh Renderers 是否开启了接收和投射阴影</li>
+<li>仅有不透明物体接受和投射阴影</li>
+<li>自定义 shader 必须使用几何队列，并且是像素光照</li>
+<li>VertexLit Shader （顶点光照 Shader）可以投射阴影，但是不能接受阴影</li>
+<li>使用前向渲染，一些 shader 只允许最亮的光投射阴影；使用延迟渲染或者使用支持 fullforwardshadows 的表面着色器</li>
+</ol>
+<h1 id="Hardware-support-for-shadows"><a href="#Hardware-support-for-shadows" class="headerlink" title="Hardware support for shadows"></a>Hardware support for shadows</h1><ul>
+<li>Built-in shadows work on almost all devices supported by Unity. The following cards are supported on each platform</li>
+</ul>
+<h2 id="PC-Windows-Mac-Linux"><a href="#PC-Windows-Mac-Linux" class="headerlink" title="PC (Windows/Mac/Linux)"></a>PC (Windows/Mac/Linux)</h2><ul>
+<li>Generally all GPUs support shadows. Exceptions might occur in some really old GPUs (for example, Intel GPUs made in 2005).</li>
+</ul>
+<h2 id="Mobile"><a href="#Mobile" class="headerlink" title="Mobile"></a>Mobile</h2><ul>
+<li>iPhone 4 does not support shadows. All later models starting with iPhone 4S and iPad 2 support shadows.</li>
+<li>Android: Requires Android 4.0 or later, and GL_OES_depth_texture support. Most notably, some Android Tegra 2/3-based Android devices do not have this, so they don’t support shadows.</li>
+<li>Windows Phone: Shadows are only supported on DX11-class GPUs (Adreno 4xx/5xx).</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/05/Optimizing-graphics-performance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/05/Optimizing-graphics-performance/" itemprop="url">
+                  Optimizing graphics performance
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T16:08:36+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-06T21:18:08+08:00">
+                2017-07-06
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Overview</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Optimizing-graphics-performance/" itemprop="url" rel="index">
+                    <span itemprop="name">Optimizing graphics performance</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/OptimizingGraphicsPerformance.html" target="_blank" rel="external">Optimizing graphics performance</a></p>
+<h1 id="Locate-high-graphics-impact"><a href="#Locate-high-graphics-impact" class="headerlink" title="Locate high graphics impact"></a>Locate high graphics impact</h1><h2 id="Common-bottlenecks-and-ways-to-check-for-them"><a href="#Common-bottlenecks-and-ways-to-check-for-them" class="headerlink" title="Common bottlenecks and ways to check for them"></a>Common bottlenecks and ways to check for them</h2><ol>
+<li>GPU 一般都限制于填充率或者带宽</li>
+</ol>
+<ul>
+<li>因此可以降低分辨率</li>
+</ul>
+<ol>
+<li>CPU 一般限制于 batches 数量</li>
+</ol>
+<h2 id="Less-common-bottlenecks"><a href="#Less-common-bottlenecks" class="headerlink" title="Less-common bottlenecks:"></a>Less-common bottlenecks:</h2><ul>
+<li>GPU 太多顶点数，受 shader 的复杂计算影响</li>
+<li>CPU 太多顶点数</li>
+</ul>
+<h1 id="CPU-optimization"><a href="#CPU-optimization" class="headerlink" title="CPU optimization"></a>CPU optimization</h1><p>##　Reduce the visible object count. To reduce the amount of work the CPU needs to do</p>
+<ul>
+<li>合并物体</li>
+<li>减少材质球，合并纹理</li>
+<li>减少渲染次数</li>
+</ul>
+<h1 id="GPU-Optimizing-model-geometry"><a href="#GPU-Optimizing-model-geometry" class="headerlink" title="GPU: Optimizing model geometry"></a>GPU: Optimizing model geometry</h1><ul>
+<li>相比建模软件，显卡为了表示模型，有可能会展开更多的顶点</li>
+<li>如果顶点有多个法线、uv 坐标、顶点色之类的，必须划分成更多的顶点</li>
+<li>虽然模型中的几何量大多和 GPU 相关，但是 Unity 也会在 CPU 处理模型（例如蒙皮网格）</li>
+</ul>
+<h1 id="Lighting-performance"><a href="#Lighting-performance" class="headerlink" title="Lighting performance"></a>Lighting performance</h1><ul>
+<li>使用光照贴图大概快2到3倍，并且表现更好</li>
+</ul>
+<h2 id="Lights-in-forward-rendering"><a href="#Lights-in-forward-rendering" class="headerlink" title="Lights in forward rendering"></a>Lights in forward rendering</h2><ul>
+<li>防止间隔太远的地方的物体合并网格并且受不同的光照，因为光照会应用与整个合并后的网格，尽管并没受到光照</li>
+<li>优化像素光照，可以减少 CPU draw calls</li>
+</ul>
+<h1 id="GPU-Texture-compression-and-mipmaps"><a href="#GPU-Texture-compression-and-mipmaps" class="headerlink" title="GPU: Texture compression and mipmaps"></a>GPU: Texture compression and mipmaps</h1><ul>
+<li>压缩贴图，可以减少读取时间，更少的内存占用，显著提升渲染性能</li>
+</ul>
+<h2 id="Texture-mipmaps"><a href="#Texture-mipmaps" class="headerlink" title="Texture mipmaps"></a>Texture mipmaps</h2><ul>
+<li>打开 mipmaps，能让 GPU 使用更低像素的纹理</li>
+</ul>
+<h1 id="LOD-and-per-layer-cull-distances"><a href="#LOD-and-per-layer-cull-distances" class="headerlink" title="LOD and per-layer cull distances"></a>LOD and per-layer cull distances</h1><ul>
+<li>使用 LOD</li>
+<li>camera 设置远距离裁剪</li>
+<li>给小物体单独一个 layer，然后通过 Camera.layerCullDistances 单独设置裁剪距离</li>
+</ul>
+<h1 id="Realtime-shadows"><a href="#Realtime-shadows" class="headerlink" title="Realtime shadows"></a>Realtime shadows</h1><ul>
+<li>实时阴影会额外增加 CPU draw calls 和 GPU 的处理</li>
+</ul>
+<h1 id="GPU-Tips-for-writing-high-performance-shaders"><a href="#GPU-Tips-for-writing-high-performance-shaders" class="headerlink" title="GPU: Tips for writing high-performance shaders"></a>GPU: Tips for writing high-performance shaders</h1><h2 id="Complex-mathematical-operations"><a href="#Complex-mathematical-operations" class="headerlink" title="Complex mathematical operations"></a>Complex mathematical operations</h2><ul>
+<li>考虑使用查找纹理代替负责数学运算</li>
+<li>防止自己计算，尽量使用 Unity 提供的函数</li>
+<li>Alpha Test 会使片段着色器变慢</li>
+</ul>
+<h2 id="Floating-point-precision"><a href="#Floating-point-precision" class="headerlink" title="Floating point precision"></a>Floating point precision</h2><ul>
+<li>桌面 GPU 忽视浮点精确度</li>
+</ul>
+<h1 id="Simple-checklist-to-make-your-game-faster"><a href="#Simple-checklist-to-make-your-game-faster" class="headerlink" title="Simple checklist to make your game faster"></a>Simple checklist to make your game faster</h1><ul>
+<li>在 PC 上控制顶点数少于 200K 和 3M</li>
+<li>手机上使用 Mobile 和 无光照 shader</li>
+<li>尽量少用 material，并且共用一个</li>
+<li>对于不动的物体开启 static</li>
+<li>只使用一个像素光照</li>
+<li>烘焙光照代替动态光</li>
+<li>使用压缩纹理</li>
+<li>防止使用雾效</li>
+<li>使用 Occlusion Culling</li>
+<li>使用 skybox “隐藏”远的物体</li>
+<li>使用 pixel shaders 或者合并贴图</li>
+<li>shader 使用 half 精度</li>
+<li>shader 中减少复杂的数学运算</li>
+<li>片段着色器少用贴图</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/04/Procedural-Materials/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/04/Procedural-Materials/" itemprop="url">
+                  Procedural Materials
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-04T10:50:28+08:00">
+                2017-07-04
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-04T15:03:22+08:00">
+                2017-07-04
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Overview</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Procedural-Materials/" itemprop="url" rel="index">
+                    <span itemprop="name">Procedural Materials</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Overview/Procedural-Materials/Procedural-Materials/" itemprop="url" rel="index">
+                    <span itemprop="name">Procedural Materials</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/ProceduralMaterials.html" target="_blank" rel="external">Procedural Materials</a></p>
+<ul>
+<li>物理材质本质上和标准的材质是相同的</li>
+<li>唯一的区别是可以使用运行时生成的纹理</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/UnityManual.io/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/UnityManual.io/">1</a><span class="space">&hellip;</span><a class="page-number" href="/UnityManual.io/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/UnityManual.io/page/6/">6</a><a class="page-number" href="/UnityManual.io/page/7/">7</a><a class="extend next" rel="next" href="/UnityManual.io/page/6/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/UnityManual.io/images/avatar.jpg"
+               alt="Fly" />
+          <p class="site-author-name" itemprop="name">Fly</p>
+           
+              <p class="site-description motion-element" itemprop="description">作者懒得写</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/UnityManual.io/">
+                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/UnityManual.io/categories/index.html">
+                <span class="site-state-item-count">111</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/oOFlyOo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/qq393830887?viewmode=list" target="_blank" title="CSDN">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  CSDN
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fly</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/UnityManual.io/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/UnityManual.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/UnityManual.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/UnityManual.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/UnityManual.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/UnityManual.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/UnityManual.io/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/UnityManual.io/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/UnityManual.io/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/UnityManual.io/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/UnityManual.io/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/UnityManual.io/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/UnityManual.io/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

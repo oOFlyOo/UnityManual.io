@@ -1,6 +1,762 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Special optimizations]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F29%2FSpecial-optimizations%2F</url>
+    <content type="text"><![CDATA[网址：Special optimizations Multidimensional vs. jagged arrays 使用数组的数组代替多维数组 Particle System pooling 粒子很占内存，所以可以的话尽量通过配置表共用一种粒子来做池 Update managers 减少 Update，尽可能在调用前做判断跳过 Using C# delegates in an update manager C# deleagate 每次 add 和 remove 都会触发深度拷贝，因此考虑用别的类型代替这些操作 Loading thread control 可以单独设置线程的优先度来优化效率 Mass object movement &amp; CullingGroups 优化不显示的物体 Reducing method call overhead for 里面的赋值放到外面 Trivial properties 固定属性值的访问，改为静态，或者只在第一次使用的时候进行计算]]></content>
+      <categories>
+        <category>Best practice guides</category>
+        <category>Understanding optimization in Unity</category>
+        <category>Special optimizations</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[General Optimizations]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F29%2FGeneral-Optimizations%2F</url>
+    <content type="text"><![CDATA[网址：General Optimizations Address Properties by ID 使用 Hash 代替 string 作为索引 Use non-allocating physics APIs 使用 non-allocating 接口 Transform manipulation Transform 的改变会引起 OnTransformChanged，合并或者尽量减少修改 Vector and quaternion math and order of operations 由于类型转换的原因，尽量先计算简单的类型 Built-In ColorUtility 使用 Unity 内置的这个颜色转换接口 Find and FindObjectOfType 减少调用 Camera locatorsInternally, Unity’s Camera.main property calls Object.FindObjectWithTag, a specialized variant of Object.FindObject. Accessing this property is no more efficient than a call to Object.FindObjectOfType. If code must address the main camera, it is strongly recommended to do one of two things: Access Camera.main in a Start orOnEnable callback and cache the resulting reference. Construct a Camera Manager class that can provide or inject a reference to the active camera. Debug code &amp; the [conditional] attribute 懒人谁会用啊]]></content>
+      <categories>
+        <category>Best practice guides</category>
+        <category>Understanding optimization in Unity</category>
+        <category>General Optimizations</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Understanding the managed heap]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F29%2FUnderstanding-the-managed-heap%2F</url>
+    <content type="text"><![CDATA[网址：Understanding the managed heap Technical details: how the managed heap operates and why it expands 每次 GC 会移动内存块，没回收的移动到一块，使其紧密 大内存占用的不移动，因为移动消耗巨大 Key problems with the heap 堆内存只增不减 Basic memory conservationCollection and array reuse 重复利用数组，减少浪费 Closures and anonymous methods 减少匿名函数的使用，特别是闭包 Anonymous methods under IL2CPP Prefer coding styles that do not require passing methods as arguments. When unavoidable, prefer anonymous methods over predefined methods. Avoid closures, regardless of scripting backend. BoxingDictionaries and enums 定义一个类实现 IEqualityComparer Empty array reuse 重复利用空数组]]></content>
+      <categories>
+        <category>Best practice guides</category>
+        <category>Understanding optimization in Unity</category>
+        <category>Understanding the managed heap</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Asset auditing]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F28%2FAsset-auditing%2F</url>
+    <content type="text"><![CDATA[网址：Asset auditing Common Asset rulesTexturesDisable the read/write enabled flag 默认是关闭的 一般需要操控 texture 的 pixel 的时候需要使用到 Disable Mipmaps if possible 关掉大概省3分1内存 对于那些会修改 Z-depth 的，关闭会印象 GPU 采集 Texture UI 一般不需要开启 Compress all Textures 如果 Texture Format 在对应平台上无法正常使用，Unity 会解压出来，即耗 CPU 又耗 GPU Enforce sensible Texture size limits 手机一般 1024 图集，512 模型就足够了 ModelsDisable the Read/Write enabled flag 默认开启 MeshRender 和 Static Batching 都需要开启 Disable rigs on non-character models 不需要动画的关掉 Enable the Optimize Game Objects option on animated models 开启来优化骨骼，需要的添加到 Extra Transforms Use Mesh compression when possible 优化掉精度 可以针对 channel 来优化，只优化 tangents 和 normals，保留 UVS 和 顶点位置 Note: Mesh Renderer Settings 不需要阴影和投射阴影的关掉，否则会导致 adds a full shadow pass to the rendering loop AudioPlatform-appropriate compression settings Enable a compression format for audio that matches the available hardware. All iOS devices include hardware MP3 decompressors, and many Android devices support Vorbis natively. Force audio clips to mono 很少移动设备支持 3D 音效 强制单通道能减半内存 Reduce audio bitrate 减少比特率，可以减少硬盘和内存消耗]]></content>
+      <categories>
+        <category>Best practice guides</category>
+        <category>Understanding optimization in Unity</category>
+        <category>Asset auditing</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Optimizations]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F28%2FOptimizations%2F</url>
+    <content type="text"><![CDATA[网址：Optimizations Focus on GPUs 填充率 = 屏幕像素 shader复杂度 overdraw Good practice 少用 material，方便 batch 使用图集，加快载入时间，和方便 batch 使用 Renderer.sharedMaterial 代替 Renderer.material 前向像素光很耗 使用光照贴图代替 减少像素光照 测试灯光效果，调节优先次序 减少使用 cutout 减少透明混合 减少多光对同一个物体使用 减少 pass 渲染顺序很重要 Post Processing 很耗 粒子减少 overdraw，使用简单的 shader Double buffer for Meshes modified every frame Shader optimizations 使用 alpha 混合代替 alpha 测试 使用简单的优化的 shader 减少运算，考虑使用查图代替 减少精度]]></content>
+      <categories>
+        <category>Platform-specific</category>
+        <category>Mobile Developer Checklist</category>
+        <category>Optimizations</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[WindowsLowIntegrity]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F28%2FWindowsLowIntegrity%2F</url>
+    <content type="text"><![CDATA[网址：WindowsLowIntegrity WindowsLowIntegrityWindows Standalone player can detect if it’s running at Low Integrity Level (see Microsoft’s documentation on Designing Applications to Run at a Low Integrity Level for more information). In this case, several things happen: The log file is written to %USER PROFILE%\AppData\LocalLow\CompanyName\ProductName PlayerPrefs is saved to HKCU\Software\AppDataLow\Software\CompanyName\ProductName]]></content>
+      <categories>
+        <category>Platform-specific</category>
+        <category>Windows</category>
+        <category>Windows General</category>
+        <category>WindowsLowIntegrity</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Optimizing the size of the built iOS player]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F26%2FOptimizing-the-size-of-the-built-iOS-player%2F</url>
+    <content type="text"><![CDATA[网址：Optimizing the size of the built iOS player iOS stripping levelThe size optimizations activated by stripping work in the following way: Strip assemblies level: the scripts’ bytecode is analyzed so that classes and methods that are not referenced from the scripts can be removed from the DLLs and thereby excluded from the AOT compilation phase. This optimization reduces the size of the main binary and accompanying DLLs and is safe as long as no reflection is used. Strip ByteCode level: any .NET DLLs (stored in the Data folder) are stripped down to metadata only. This is possible because all the code is already precompiled during the AOT phase and linked into the main binary. Use micro mscorlib level: a special, smaller version of mscorlib is used. Some components are removed from this library, for example, Security, Reflection.Emit, Remoting, non Gregorian calendars, etc. Also, interdependencies between internal components are minimized. This optimization reduces the main binary and mscorlib.dll size but it is not compatible with some System and System.Xml assembly classes, so use it with care.每一层都包含上一层 Stripping with IL2CPPSimple checklist for making your distribution as small as possible 压缩贴图和音效 调高 ios stripping level（难） 设置 Fast but no exceptions（没人用） 尽量不要使用 System.dll 和 System.xml.dll 移除没必要的代码依赖 使用 .net 2.0 subset 不使用 JS Array 不使用 泛型和值类型的结合（引用类型的泛型代码有优化，但是值类型没有）]]></content>
+      <categories>
+        <category>Platform-specific</category>
+        <category>iOS</category>
+        <category>iOS Advanced Topics</category>
+        <category>Optimizing Performance in iOS</category>
+        <category>Optimizing the size of the built iOS player</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS Specific Optimizations]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F26%2FiOS-Specific-Optimizations%2F</url>
+    <content type="text"><![CDATA[网址：iOS Specific Optimizations Script Call Optimization 大部分调用 UnityEngine 的接口，都会调用到 C，所以效率不高，可以更改 Script Call Optimization* 来做优化 Setting the Desired Framerate 默认30帧 Tuning Accelerometer Processing Frequency accelerometer input 不用可以关闭]]></content>
+      <categories>
+        <category>Platform-specific</category>
+        <category>iOS</category>
+        <category>iOS Advanced Topics</category>
+        <category>Optimizing Performance in iOS</category>
+        <category>iOS Specific Optimizations</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Performance and Optimization]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F25%2FPerformance-and-Optimization%2F</url>
+    <content type="text"><![CDATA[网址： Performance and Optimization Character SetupNumber of Bones 减少骨骼数，或者隐藏掉 Multiple Skinned Meshes 合并 Skinned Meshes Animation SystemScale Curves 比起位移旋转更加耗时，尽量不用 Humanoid vs. Generic Modes 使用 BodyMask 移除 IK Goals 和 fingers animation 如果不用到的话 root motion 比较耗，可以的话不要使用 Runtime OptimizationsVisibility and Updates Culling Mode Base On Renderers 关闭 skinned mesh renderer’s update]]></content>
+      <categories>
+        <category>Animation</category>
+        <category>﻿Performance and Optimization</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Audio Clip]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F25%2FAudio-Clip%2F</url>
+    <content type="text"><![CDATA[网址：Audio Clip Importing Audio Assets PCM，Vorbix/mp3 格式比较好 PCM 不压缩，Vorbix/mp3 是比 ADPCM 要好的压缩格式 Vorbix 是比较适用的格式]]></content>
+      <categories>
+        <category>Audio</category>
+        <category>Audio Reference</category>
+        <category>Audio Clip</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Managed bytecode stripping with IL2CPP]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F24%2FManaged-bytecode-stripping-with-IL2CPP%2F</url>
+    <content type="text"><![CDATA[网址：Managed bytecode stripping with IL2CPP Managed bytecode stripping with IL2CPP在 IL2CPP 模式下，Managed byte code stripping 必定开启，因此 Stripping Level option 会被 Strip Engine Code 替代开启的时候，将会优化掉没有用到的代码 Tips]]></content>
+      <categories>
+        <category>Scripting</category>
+        <category>Scripting Tools</category>
+        <category>IL2CPP</category>
+        <category>Managed bytecode stripping with IL2CPP</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Optimizing IL2CPP build times]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F24%2FOptimizing-IL2CPP-build-times%2F</url>
+    <content type="text"><![CDATA[网址：Optimizing IL2CPP build times Optimizing IL2CPP build times 使用增量打包，C++ compiler 仅重新编译更改的代码 禁用恶意检查软件（Windows Defender） SSD]]></content>
+      <categories>
+        <category>Scripting</category>
+        <category>Scripting Tools</category>
+        <category>IL2CPP</category>
+        <category>Optimizing IL2CPP build times</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Log Files]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F24%2FLog-Files%2F</url>
+    <content type="text"><![CDATA[网址：Log Files Player在 Windows Player 平台，Log 文件存储文件不一定，后面会说到]]></content>
+      <categories>
+        <category>Scripting</category>
+        <category>Scripting Tools</category>
+        <category>Log Files</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Built-in serialization]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F24%2FBuilt-in-serialization%2F</url>
+    <content type="text"><![CDATA[网址：Built-in serialization Built-in serializationUnloading unused assets当读取一个场景并且检查到对象（例如贴图）不再被引用的时候，Unity 将会调用 Resource.GarbageCollectSharedAssets() 来释放资源]]></content>
+      <categories>
+        <category>Scripting</category>
+        <category>Scripting Overview</category>
+        <category>Script Serialization</category>
+        <category>Built-in serialization</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Platform dependent compilation]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F24%2FPlatform-dependent-compilation%2F</url>
+    <content type="text"><![CDATA[网址：Platform dependent compilation Global custom #definesAs an example, if you include the single line -define:UNITY_DEBUG in your mcs.rsp file, the #define directive UNITY_DEBUG exists as a global #define for C# scripts, except for Editor scripts.Every time you make changes to .rsp files, you need to recompile in order for them to be effective. You can do this by updating or reimporting a single script (.js or .cs) file.]]></content>
+      <categories>
+        <category>Scripting</category>
+        <category>Scripting Overview</category>
+        <category>Platform dependent compilation</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Hardware Requirements for Unity’s Graphics Features]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F21%2FHardware-Requirements-for-Unity%E2%80%99s-Graphics-Features%2F</url>
+    <content type="text"><![CDATA[网址：Hardware Requirements for Unity’s Graphics Features Realtime ShadowsMobile shadows (iOS/Android) require OpenGL ES 2.0 and GL_OES_depth_texture extension, or OpenGL ES 3.0. Most notably, the extension is not present on Tegra-based Android devices, so shadows do not work there.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Rendering Pipeline Details</category>
+        <category>Hardware Requirements for Unity’s Graphics Features</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Texture compression formats for platform-specific overrides]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F21%2FTexture-compression-formats-for-platform-specific-overrides%2F</url>
+    <content type="text"><![CDATA[网址：Texture compression formats for platform-specific overrides Texture compression formats for platform-specific overrides## 当目标平台不支持贴图格式的时候，将会解压成 RGBA32，这样子内存不仅会有新的贴图，还会有原来的那一份 Crunch compression 压缩慢，但是解压快 Notes on Android Android 上最好是使用 ETC2 RGBA16 适用于所有平台]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Texture Components</category>
+        <category>Textures</category>
+        <category>Texture compression formats for platform-specific overrides</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Text Asset]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F21%2FText-Asset%2F</url>
+    <content type="text"><![CDATA[网址：Text Asset Text AssetText Assets are a format for imported text files. When you drop a text file into your Project Folder, it will be converted to a Text Asset. The supported text formats are: .txt .html .htm .xml .bytes .json .csv .yaml .fnt DetailsBinary data 不要用 .txt 来存储 binary，否则在读取的时候会触发意外的事情]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Mesh Components</category>
+        <category>Text Mesh</category>
+        <category>Text Asset</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Texture arrays]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F20%2FTexture-arrays%2F</url>
+    <content type="text"><![CDATA[网址：Texture arrays Platform SupportTexture arrays need to be supported by the underlying graphics API and the GPU. They are available on: Direct3D 11/12 (Windows, Xbox One) OpenGL Core (Mac OS X, Linux) Metal (iOS, Mac OS X) OpenGL ES 3.0 (Android, iOS, WebGL 2.0) PlayStation 4]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Advanced ShaderLab topics</category>
+        <category>Texture arrays</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Shader Level of Detail]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F20%2FShader-Level-of-Detail%2F</url>
+    <content type="text"><![CDATA[网址：Shader Level of Detail #Shader Level of Detail VertexLit kind of shaders = 100 Decal, Reflective VertexLit = 150 Diffuse = 200 Diffuse Detail, Reflective Bumped Unlit, Reflective Bumped VertexLit = 250 Bumped, Specular = 300 Bumped Specular = 400 Parallax = 500 Parallax Specular = 600]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Advanced ShaderLab topics</category>
+        <category>Shader Level of Detail</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Platform-specific rendering differences]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F20%2FPlatform-specific-rendering-differences%2F</url>
+    <content type="text"><![CDATA[网址：Platform-specific rendering differences Render Texture coordinatesVertical Texture coordinate conventions differ between two types of platforms: Direct3D-like and OpenGL-like. Direct3D-like: The coordinate is 0 at the top and increases downward. This applies to Direct3D, Metal and consoles. OpenGL-like: The coordinate is 0 at the bottom and increases upward. This applies to OpenGL and OpenGL ES.Unity 会统一使用 OpenGL特别注意使用的地方： Render Texture Image Effects UV Space Image EffectsRendering in UV spaceClip space coordinatesSimilar to Texture coordinates, the clip space coordinates (also known as post-projection space coordinates) differ between Direct3D-like and OpenGL-like platforms: Direct3D-like: The clip space depth goes from 0.0 at the near plane to +1.0 at the far plane. This applies to Direct3D, Metal and consoles. OpenGL-like: The clip space depth goes from –1.0 at the near plane to +1.0 at the far plane. This applies to OpenGL and OpenGL ES. Precision of Shader computationsPC GPUs treat all floating point types (float, half and fixed) as the same - they do all calculations using full 32-bit precision, while many mobile device GPUs do not do this. Const declarations in Shaders Microsoft’s HLSL const has much the same meaning as it does in C# and C++ in that the variable declared is read-only within its scope but can be initialized in any way. OpenGL’s GLSL const means that the variable is effectively a compile time constant, and so it must be initialized with compile time constraints (either literal values or calculations on other consts). Semantics used by Shaders Vertex Shader output (clip space) position: SV_POSITION. Sometimes Shaders use POSITION semantics to get Shaders working on all platforms. Note that this does not not work on Sony PS4 or with tessellation. Fragment Shader output color: SV_Target. Sometimes Shaders use COLOR or COLOR0 to get Shaders working on all platforms. Note that this does not work on Sony PS4. Direct3D Shader compiler syntaxDirectX 11 (DX11) HLSL syntax in ShadersUsing Shader framebuffer fetchThe Depth (Z) direction in Shaders]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Advanced ShaderLab topics</category>
+        <category>Platform-specific rendering differences</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Camera’s Depth Texture]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F20%2FCamera%E2%80%99s-Depth-Texture%2F</url>
+    <content type="text"><![CDATA[网址：Camera’s Depth Texture Camera’s Depth TextureThere are three possible depth texture modes: DepthTextureMode.Depth: a depth texture. DepthTextureMode.DepthNormals: depth and view space normals packed into one texture.* DepthTextureMode.MotionVectors: per-pixel screen space motion of each screen texel for the current frame. Packed into a RG16 texture. DepthTextureMode.Depth texture 深度图使用 shadow caster pass，所以如果 shader 不支持，则物体不会出现在深度图中 在 shader 的 fallback 添加那些有 shadow casting pass 的 shader，或者在 surfase shader 中添加 addshadow 也会生成 shadow pass 仅有 render queue &lt;= 2500 的会渲染到深度图中 DepthTextureMode.DepthNormals texture 32bits 深度图，View Space Normals Stereographic projection 加密到 RG Channel，depth 加密到 BA Channel DecodeDepthNormal 用于解密图到 0~1 范围 DepthTextureMode.MotionVectors texture This builds a screen-sized RG16 (16-bit float/channel) texture, where screen space pixel motion is encoded into the R&amp;G channels. The pixel motion is encoded in screen UV space. When sampling from this texture motion from the encoded pixel is returned in a rance of –1..1. This will be the UV offset from the last frame to the current frame. Shader variablesDepth textures are available for sampling in shaders as global shader properties. By declaring a sampler called _CameraDepthTexture you will be able to sample the main depth texture for the camera._CameraDepthTexture always refers to the camera’s primary depth texture. By contrast, you can use _LastCameraDepthTexture to refer to the last depth texture rendered by any camera. This could be useful for example if you render a half-resolution depth texture in script using a secondary camera and want to make it available to a post-process shader.The motion vectors texture (when enabled) is avaialable in Shaders as a global Shader property. By declaring a sampler called ‘_CameraMotionVectorsTexture’ you can sample the Texture for the curently rendering Camera. Under the hoodDepth textures can come directly from the actual depth buffer, or be rendered in a separate pass, depending on the rendering path used and the hardware. Typically when using Deferred Shading or Legacy Deferred Lighting rendering paths, the depth textures come “for free” since they are a product of the G-buffer rendering anyway.When the DepthNormals texture is rendered in a separate pass, this is done through Shader Replacement. Hence it is important to have correct “RenderType” tag in your shaders.When enabled, the MotionVectors texture always comes from a extra render pass. Unity will render moving GameObjects into this buffer, and construct their motion from the last frame to the current frame.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Advanced ShaderLab topics</category>
+        <category>Camera’s Depth Texture</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Using Depth Textures]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F20%2FUsing-Depth-Textures%2F</url>
+    <content type="text"><![CDATA[网址：Using Depth Textures Using Depth TexturesDepth Textures are supported on most modern hardware and graphics APIs. Special requirements are listed below: Direct3D 11+ (Windows), OpenGL 3+ (Mac/Linux), OpenGL ES 3.0+ (Android/iOS), Metal (iOS) and consoles like PS4/Xbox One all support depth textures. Direct3D 9 (Windows) requires a graphics driver to support “INTZ” texture format to get depth textures. OpenGL ES 2.0 (iOS/Android) requires GL_OES_depth_texture extension to be present. WebGL requires WEBGL_depth_texture extension. Depth Texture Shader helper macros UNITY_TRANSFER_DEPTH(o): computes eye space depth of the vertex and outputs it in o (which must be a float2). Use it in a vertex program when rendering into a depth texture. On platforms with native depth textures this macro does nothing at all, because Z buffer value is rendered implicitly. UNITY_OUTPUT_DEPTH(i): returns eye space depth from i (which must be a float2). Use it in a fragment program when rendering into a depth texture. On platforms with native depth textures this macro always returns zero, because Z buffer value is rendered implicitly. COMPUTE_EYEDEPTH(i): computes eye space depth of the vertex and outputs it in o. Use it in a vertex program when not rendering into a depth texture. DECODE_EYEDEPTH(i)/LinearEyeDepth(i): given high precision value from depth texture i, returns corresponding eye space depth. Linear01Depth(i): given high precision value from depth texture i, returns corresponding linear depth in range between 0 and 1.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Advanced ShaderLab topics</category>
+        <category>Using Depth Textures</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Rendering with Replaced Shaders]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F20%2FRendering-with-Replaced-Shaders%2F</url>
+    <content type="text"><![CDATA[网址：Rendering with Replaced Shaders Rendering with Replaced Shaders If replacementTag is empty, then all objects in the scene are rendered with the given replacement shader. If replacementTag is not empty, then for each object that would be rendered: The real object’s shader is queried for the tag value. If it does not have that tag, object is not rendered. A subshader is found in the replacement shader that has a given tag with the found value. If no such subshader is found, object is not rendered. Now that subshader is used to render the object. Shader replacement tags in built-in Unity shadersAll built-in Unity shaders have a “RenderType” tag set that can be used when rendering with replaced shaders. Tag values are the following:]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Advanced ShaderLab topics</category>
+        <category>Rendering with Replaced Shaders</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Performance tips when writing shaders]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F20%2FPerformance-tips-when-writing-shaders%2F</url>
+    <content type="text"><![CDATA[网址：Performance tips when writing shaders Optimized Surface Shaders The approxview directive for shaders that use view direction (i.e. Specular) makes the view direction normalized per vertex instead of per pixel. This is approximate, but often good enough. The halfasview for Specular shader types is even faster. The half-vector (halfway between lighting direction and view vector) is computed and normalized per vertex, and the lighting function receives the half-vector as a parameter instead of the view vector. noforwardadd makes a shader fully support one-directional light in Forward rendering only. The rest of the lights can still have an effect as per-vertex lights or spherical harmonics. This is great to make your shader smaller and make sure it always renders in one pass, even with multiple lights present. noambient disables ambient lighting and spherical harmonics lights on a shader. This can make performance slightly faster. Precision of computations For world space positions and texture coordinates, use float precision. For everything else (vectors, HDR colors, etc.), start with half precision. Increase only if necessary. For very simple operations on texture data, use fixed precision. PC 一般都是仅使用 float 的 Mobile 一般都是仅使用 half 的 除了老显卡会支持使用 fixed，大部分都是直接使用 half Alpha Testing However, on PowerVR GPUs found in iOS and some Android devices, alpha testing is resource-intensive. Do not try to use it for performance optimization on these platforms, as it causes the game to run slower than usual. Color Mask On some platforms (mostly mobile GPUs found in iOS and Android devices), using ColorMask to leave out some channels (e.g. ColorMask RGB) can be resource-intensive, so only use it if really necessary.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Advanced ShaderLab topics</category>
+        <category>Performance tips when writing shaders</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Unity’s Rendering Pipeline]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F12%2FUnity%E2%80%99s-Rendering-Pipeline%2F</url>
+    <content type="text"><![CDATA[网址：Unity’s Rendering Pipeline Rendering Paths 前向渲染，使用 ForwardBase 和 ForwardAdd 延迟渲染，使用 Deferred 对于上述任何光照，ShaowCaster 用于渲染阴影和深度图 Forward Rendering path 如果使用前向渲染，但是没有设置 pass，将会使用 Vertex Lit Path ForwardBase 环境光 光照贴图 主要的方向光 不重要的顶点光照ForwardAdd 像素光照，每个光照对对象使用了一次 Deferred Shading path Deferred pass renders all information needed for lighting (in built-in shaders: diffuse color, specular color, smoothness, world space normal, emission). It also adds lightmaps, reflection probes and ambient lighting into the emission channe]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Advanced ShaderLab topics</category>
+        <category>Unity’s Rendering Pipeline</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ShaderLab: SubShader Tags]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F12%2FShaderLab-SubShader-Tags%2F</url>
+    <content type="text"><![CDATA[网址：ShaderLab: SubShader Tags DetailsRendering Order - Queue tag Background - this render queue is rendered before any others. You’d typically use this for things that really need to be in the background. Geometry (默认) - this is used for most objects. Opaque geometry uses this queue. AlphaTest - alpha tested geometry uses this queue. It’s a separate queue from Geometry one since it’s more efficient to render alpha-tested objects after all solid ones are drawn. Transparent - this render queue is rendered after Geometry and AlphaTest, in back-to-front order. Anything alpha-blended (i.e. shaders that don’t write to depth buffer) should go here (glass, particle effects). Overlay - this render queue is meant for overlay effects. Anything rendered last should go here (e.g. lens flares). RenderType tag 用于 Shader Replacement 或者 camera’s depth texture DisableBatching tag True：关闭 batching False：不关闭，默认 LODFading：当开启 LOD 的时候关闭，一般用于树 ForceNoShadowCasting tag True：一般用于渲染透明物体的时候，关闭从其它 subshader 那里的投影 IgnoreProjector tag True：一般用于半透明物体，因为 Projectors 没办法很好的处理 CanUseSpriteAtlas tag False：当用于 Sprite 的时候，如果使用了 Atlas，设定无效 PreviewType tag Spheres：默认 Plane Skybox]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>ShaderLab Syntax</category>
+        <category>ShaderLab SubShader</category>
+        <category>ShaderLab SubShader Tags</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ShaderLab: Pass Tags]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F11%2FShaderLab-Pass-Tags%2F</url>
+    <content type="text"><![CDATA[网址：ShaderLab: Pass Tags DetailsLightMode tag Always: Always rendered; no lighting is applied. ForwardBase: Used in Forward rendering, ambient, main directional light, vertex/SH lights and lightmaps are applied. ForwardAdd: Used in Forward rendering; additive per-pixel lights are applied, one pass per light. Deferred: Used in Deferred Shading; renders g-buffer. ShadowCaster: Renders object depth into the shadowmap or a depth texture. MotionVectors: Used to calculate per-object motion vectors. PassFlags tag OnlyDirectional: When used in ForwardBase pass type, this flag makes it so that only the main directional light and ambient/lightprobe data is passed into the shader. This means that data of non-important lights is not passed into vertex-light or spherical harmonics shader variables. See Forward rendering for details. RequireOptions tag SoftVegetation: Render this pass only if Soft Vegetation is on in Quality Settings.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>ShaderLab Syntax</category>
+        <category>ShaderLab SubShader</category>
+        <category>ShaderLab Pass</category>
+        <category>ShaderLab Pass Tags</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ShaderLab: Stencil]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F11%2FShaderLab-Stencil%2F</url>
+    <content type="text"><![CDATA[网址：ShaderLab: Stencil ShaderLab: Stencil 用于保存或者丢弃像素 一般是8位integer每像素 SyntaxRef Ref referenceValue ReadMask ReadMask readMask 默认255 WriteMask WriteMask writeMask 默认255 Comp Comp comparisonFunction Pass Pass stencilOperation Fail Fail stencilOperation Comp Comp comparisonFunction ZFail ZFail stencilOperation]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>ShaderLab Syntax</category>
+        <category>ShaderLab SubShader</category>
+        <category>ShaderLab Pass</category>
+        <category>ShaderLab Stencil</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ShaderLab: Blending]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F11%2FShaderLab-Blending%2F</url>
+    <content type="text"><![CDATA[网址：ShaderLab: Blending ShaderLab: Blending Syntax Blend Off: Turn off blending (this is the default) Blend SrcFactor DstFactor: Configure and enable blending. The generated color is multiplied by the SrcFactor. The color already on screen is multiplied by DstFactor and the two are added together. Blend SrcFactor DstFactor, SrcFactorA DstFactorA: Same as above, but use different factors for blending the alpha channel. BlendOp Op: Instead of adding blended colors together, carry out a different operation on them. BlendOp OpColor, OpAlpha: Same as above, but use different blend operation for color (RGB) and alpha (A) channels. AlphaToMask On: Turns on alpha-to-coverage. When MSAA is used, alpha-to-coverage modifies multisample coverage mask proportionally to the pixel Shader result alpha value. This is typically used for less aliased outlines than regular alpha test; useful for vegetation and other alpha-tested Shaders.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>ShaderLab Syntax</category>
+        <category>ShaderLab SubShader</category>
+        <category>ShaderLab Pass</category>
+        <category>ShaderLab Blending</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[ShaderLab: Culling & Depth Testing]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F11%2FShaderLab-Culling-Depth-Testing%2F</url>
+    <content type="text"><![CDATA[网址：ShaderLab: Culling &amp; Depth Testing ShaderLab: Culling &amp; Depth Testing SyntaxCull 控制多边形的边的剔除 Back 不渲染远离观察者的背面，默认 Front 不渲染面向观察者的面 Off 关闭剔除 ZTest 控制深度测试 ZTest Less | Greater | LEqual | GEqual | Equal | NotEqual | Always 默认 LEqual Offset Offset Factor, Units]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>ShaderLab Syntax</category>
+        <category>ShaderLab SubShader</category>
+        <category>ShaderLab Pass</category>
+        <category>ShaderLab Culling &amp; Depth Testing</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Shader data types and precision]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F11%2FShader-data-types-and-precision%2F</url>
+    <content type="text"><![CDATA[网址：Shader data types and precision Basic data typesHigh precision: float 32 bits 世界坐标 纹理坐标 复杂的三角函数和指数运算 Medium precision: half 16 bits，-6000~6000，大致0.001精度 简单的向量 方向 物体坐标 HDR 颜色 Low precision: fixed 11 bits，-2~2，1/256 精度 一般颜色 简单计算 Integer data types 像 ES2 这种 GPU 会不支持 Composite vector/matrix types 像 ES2 这种 GPU 只支持正方形矩阵 Precision, Hardware Support and Performance PC 上都是使用 32 bits 的，不管使用的是 half 还是 fixed 即使是在 Mobile 上，对精度类型的占位也是不一样的]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Writing vertex and fragment shaders</category>
+        <category>Shader data types and precision</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Shader Compilation Target Levels]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F11%2FShader-Compilation-Target-Levels%2F</url>
+    <content type="text"><![CDATA[网址：Shader Compilation Target Levels Default compilation target Unity 默认使用2.5 使用 geometry 会导致使用4.0 使用 hull 或者 domain 会导致使用4.6 Supported #pragma target names Note that all OpenGL-like platforms (including mobile) are treated as “capable of shader model 3.0”. WP8/WinRT platforms (DX11 feature level 9.x) are treated as only capable of shader model 2.5. #pragma target 2.0 Works on all platforms supported by Unity. DX9 shader model 2.0. Limited amount of arithmetic &amp; texture instructions; 8 interpolators; no vertex texture sampling; no derivatives in fragment shaders; no explicit LOD texture sampling. #pragma target 2.5 (default) Almost the same as 3.0 target (see below), except still only has 8 interpolators, and does not have explicit LOD texture sampling. Compiles into SM3.0 on DX9, and DX11 feature level 9.3 on Windows Phone. #pragma target 3.0 DX9 shader model 3.0: derivative instructions, texture LOD sampling, 10 interpolators, more math/texture instructions allowed. Not supported on DX11 feature level 9.x GPUs (e.g. most Windows Phone devices). Might not be fully supported by some OpenGL ES 2.0 devices, depending on driver extensions present and features used. #pragma target 3.5 (or es3.0) OpenGL ES 3.0 capabilities (DX10 SM4.0 on D3D platforms, just without geometry shaders). Not supported on DX9, DX11 9.x (WinPhone), OpenGL ES 2.0. Supported on DX11+, OpenGL 3.2+, OpenGL ES 3+, Metal, Vulkan, PS4/XB1 consoles. Native integer operations in shaders, texture arrays, etc. #pragma target 4.0 DX11 shader model 4.0. Not supported on DX9, DX11 9.x (WinPhone), OpenGL ES 2.0/3.0/3.1, Metal. Supported on DX11+, OpenGL 3.2+, OpenGL ES 3.1+AEP, Vulkan, PS4/XB1 consoles. Has geometry shaders and everything that es3.0 target has. #pragma target 4.5 (or es3.1) OpenGL ES 3.1 capabilities (DX11 SM5.0 on D3D platforms, just without tessellation shaders). Not supported on DX9, DX11 before SM5.0, OpenGL before 4.3 (i.e. Mac), OpenGL ES 2.0/3.0. Supported on DX11+ SM5.0, OpenGL 4.3+, OpenGL ES 3.1, Metal, Vulkan, PS4/XB1 consoles. Has compute shaders, random access texture writes, atomics etc. No geometry or tessellation shaders. #pragma target 4.6 (or gl4.1) OpenGL 4.1 capabilities (DX11 SM5.0 on D3D platforms, just without compute shaders). This is basically the highest OpenGL level supported by Macs. Not supported on DX9, DX11 before SM5.0, OpenGL before 4.1, OpenGL ES 2.0/3.0/3.1, Metal. Supported on DX11+ SM5.0, OpenGL 4.1+, OpenGL ES 3.1+AEP, PS4/XB1 consoles. #pragma target 5.0 DX11 shader model 5.0. Not supported on DX9, DX11 before SM5.0, OpenGL before 4.3 (i.e. Mac), OpenGL ES 2.0/3.0/3.1, Metal. Supported on DX11+ SM5.0, OpenGL 4.3+, OpenGL ES 3.1+AEP, Vulkan, PS4/XB1 consoles. Note that all OpenGL-like platforms (including mobile) are treated as “capable of shader model 3.0”. WP8/WinRT platforms (DX11 feature level 9.x) are treated as only capable of shader model 2.5.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Writing vertex and fragment shaders</category>
+        <category>Shader Compilation Target Levels</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Making multiple shader program variants]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F10%2FMaking-multiple-shader-program-variants%2F</url>
+    <content type="text"><![CDATA[网址：Making multiple shader program variants How multi_compile works一般的 每一个都是一个 variant，如果没有开启任何一个，默认启用第一个 特殊的 对于所有的都是以“__”开头的，则默认创建一个空的，避免另外创建一个关键词 Difference between shader_feature and multi_compile shader_feature 等价于 multi_compile __ shader_feature 可以在面板上设置，multi_compile 通过代码来设置 Built-in multi_compile shortcuts multi_compile_fwdbase compiles all variants needed by ForwardBase (forward rendering base) pass type. The variants deal with different lightmap types and main directional light having shadows on or off. multi_compile_fwdadd compiles variants for ForwardAdd (forward rendering additive) pass type. This compiles variants to handle directional, spot or point light types, and their variants with cookie textures. multi_compile_fwdadd_fullshadows - same as above, but also includes ability for the lights to have realtime shadows. multi_compile_fog expands to several variants to handle different fog types (off/linear/exp/exp2).]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Writing vertex and fragment shaders</category>
+        <category>Making multiple shader program variants</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Built-in shader variables]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F10%2FBuilt-in-shader-variables%2F</url>
+    <content type="text"><![CDATA[网址：Built-in shader variables Transformations 都是 float4 UNITY_MATRIX_MVP Current model view projection matrix. UNITY_MATRIX_MV Current model * view matrix. UNITY_MATRIX_V Current view matrix. UNITY_MATRIX_P Current projection matrix. UNITY_MATRIX_VP Current view * projection matrix. UNITY_MATRIX_T_MV Transpose of model * view matrix. UNITY_MATRIX_IT_MV Inverse transpose of model * view matrix. _Object2World Current model matrix. _World2Object Inverse of current world matrix. Camera and screen _WorldSpaceCameraPos float3 World space position of the camera. _ProjectionParams float4 x is 1.0 (or –1.0 if currently rendering with a flipped projection matrix), y is the camera’s near plane, z is the camera’s far plane and w is 1/FarPlane. _ScreenParams float4 x is the camera’s render target width in pixels, y is the camera’s render target height in pixels, z is 1.0 + 1.0/width and w is 1.0 + 1.0/height. _ZBufferParams float4 Used to linearize Z buffer values. x is (1-far/near), y is (far/near), z is (x/far) and w is (y/far). unity_OrthoParams float4 x is orthographic camera’s width, y is orthographic camera’s height, z is unused and w is 1.0 when camera is orthographic, 0.0 when perspective. unity_CameraProjection float4x4 Camera’s projection matrix. unity_CameraInvProjection float4x4 Inverse of camera’s projection matrix. unity_CameraWorldClipPlanes[6] float4 Camera frustum plane world space equations, in this order: left, right, bottom, top, near, far. Time _Time float4 Time since level load (t/20, t, t2, t3), use to animate things inside the shaders. _SinTime float4 Sine of time: (t/8, t/4, t/2, t). _CosTime float4 Cosine of time: (t/8, t/4, t/2, t). unity_DeltaTime float4 Delta time: (dt, 1/dt, smoothDt, 1/smoothDt). Lighting _LightColor0 (declared in Lighting.cginc) fixed4 Light color. _WorldSpaceLightPos0 float4 Directional lights: (world space direction, 0). Other lights: (world space position, 1). _LightMatrix0 (declared in AutoLight.cginc) float4x4 World-to-light matrix. Used to sample cookie &amp; attenuation textures. unity_4LightPosX0, unity_4LightPosY0, unity_4LightPosZ0 float4 (ForwardBase pass only) world space positions of first four non-important point lights. unity_4LightAtten0 float4 (ForwardBase pass only) attenuation factors of first four non-important point lights. unity_LightColor half4[4] (ForwardBase pass only) colors of of first four non-important point lights. _LightColor float4 Light color. _LightMatrix0 float4x4 World-to-light matrix. Used to sample cookie &amp; attenuation textures. unity_LightColor half4[8] Light colors. unity_LightPosition float4[8] View-space light positions. (-direction,0) for directional lights; (position,1) for point/spot lights. unity_LightAtten half4[8] Light attenuation factors. x is cos(spotAngle/2) or –1 for non-spot lights; y is 1/cos(spotAngle/4) or 1 for non-spot lights; z is quadratic attenuation; w is squared light range. unity_SpotDirection float4[8] View-space spot light positions; (0,0,1,0) for non-spot lights. Fog and Ambient unity_AmbientSky fixed4 Sky ambient lighting color in gradient ambient lighting case. unity_AmbientEquator fixed4 Equator ambient lighting color in gradient ambient lighting case. unity_AmbientGround fixed4 Ground ambient lighting color in gradient ambient lighting case.UNITY_LIGHTMODEL_AMBIENT fixed4 Ambient lighting color (sky color in gradient ambient case). Legacy variable. unity_FogColor fixed4 Fog color. unity_FogParams float4 Parameters for fog calculation: (density / sqrt(ln(2)), density / ln(2), –1/(end-start), end/(end-start)). x is useful for Exp2 fog mode, y for Exp mode, z and w for Linear mode. Various unity_LODFade float4 Level-of-detail fade when using LODGroup. x is fade (0..1), y is fade quantized to 16 levels, z and w unused.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Writing vertex and fragment shaders</category>
+        <category>Built-in shader variables</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Built-in shader helper functions]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F10%2FBuilt-in-shader-helper-functions%2F</url>
+    <content type="text"><![CDATA[网址：Built-in shader helper functions Built-in shader helper functionsVertex transformation functions in UnityCG.cginc float4 UnityObjectToClipPos(float3 pos) 将点从物体坐标空间转到齐次坐标 float3 UnityObjectToViewPos(float3 pos) 将点从物体坐标空间转到视图坐标 Generic helper functions in UnityCG.cginc float3 WorldSpaceViewDir (float4 v) Returns world space direction (not normalized) from given object space vertex position towards the camera. float3 ObjSpaceViewDir (float4 v) Returns object space direction (not normalized) from given object space vertex position towards the camera. float2 ParallaxOffset (half h, half height, half3 viewDir) calculates UV offset for parallax normal mapping. fixed Luminance (fixed3 c) Converts color to luminance (grayscale). fixed3 DecodeLightmap (fixed4 color) Decodes color from Unity lightmap (RGBM or dLDR depending on platform). float4 EncodeFloatRGBA (float v) Encodes [0..1) range float into RGBA color, for storage in low precision render target. float DecodeFloatRGBA (float4 enc) Decodes RGBA color into a float. float2 EncodeFloatRG (float v) Encodes [0..1) range float into a float2. float DecodeFloatRG (float2 enc) Decodes a previously-encoded RG float. float2 EncodeViewNormalStereo (float3 n) Encodes view space normal into two numbers in 0..1 range. float3 DecodeViewNormalStereo (float4 enc4) Decodes view space normal from enc4.xy. Forward rendering helper functions in UnityCG.cginc float3 WorldSpaceLightDir (float4 v) Computes world space direction (not normalized) to light, given object space vertex position. float3 ObjSpaceLightDir (float4 v) Computes object space direction (not normalized) to light, given object space vertex position. float3 Shade4PointLights (…) Computes illumination from four point lights, with light data tightly packed into vectors. Forward rendering uses this to compute per-vertex lighting. Screen-space helper functions in UnityCG.cginc float4 ComputeScreenPos (float4 clipPos) Computes texture coordinate for doing a screenspace-mapped texture sample. Input is clip space position. float4 ComputeGrabScreenPos (float4 clipPos) Computes texture coordinate for sampling a GrabPass texure. Input is clip space position. Vertex-lit helper functions in UnityCG.cginc float3 ShadeVertexLights (float4 vertex, float3 normal) Computes illumination from four per-vertex lights and ambient, given object space position &amp; normal.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Writing vertex and fragment shaders</category>
+        <category>Built-in shader helper functions</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Predefined Shader preprocessor macros]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F10%2FPredefined-Shader-preprocessor-macros%2F</url>
+    <content type="text"><![CDATA[网址：Predefined Shader preprocessor macros Target platformShader target modelUnity versionPlatform difference helpersShadow mapping macrosTexture/Sampler declaration macrosSurface Shader pass indicators]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Writing vertex and fragment shaders</category>
+        <category>Predefined Shader preprocessor macros</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Built-in shader include files]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F10%2FBuilt-in-shader-include-files%2F</url>
+    <content type="text"><![CDATA[网址：Built-in shader include files Built-in shader include files HLSLSupport.cginc - (automatically included) Helper macros and definitions for cross-platform shader compilation. UnityShaderVariables.cginc - (automatically included) Commonly used global variables. UnityCG.cginc - commonly used helper functions. AutoLight.cginc - lighting &amp; shadowing functionality, e.g. surface shaders use this file internally. Lighting.cginc - standard surface shader lighting models; automatically included when you’re writing surface shaders. TerrainEngine.cginc - helper functions for Terrain &amp; Vegetation shaders. UnityCG.cginc Data structures in UnityCG.cginc struct appdata_base: vertex shader input with position, normal, one texture coordinate. struct appdata_tan: vertex shader input with position, normal, tangent, one texture coordinate. struct appdata_full: vertex shader input with position, normal, tangent, vertex color and two texture coordinates. struct appdata_img: vertex shader input with position and one texture coordinate.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Writing vertex and fragment shaders</category>
+        <category>Built-in shader include files</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Providing vertex data to vertex programs]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F10%2FProviding-vertex-data-to-vertex-programs%2F</url>
+    <content type="text"><![CDATA[网址：Providing vertex data to vertex Providing-vertex-data-to-vertex-programs.md Providing vertex data to vertex programs appdata_base: position, normal and one texture coordinate. appdata_tan: position, tangent, normal and one texture coordinate. appdata_full: position, tangent, normal, four texture coordinates and color. POSITION is the vertex position, typically a float3 or float4. NORMAL is the vertex normal, typically a float3. TEXCOORD0 is the first UV coordinate, typically float2, float3 or float4. TEXCOORD1, TEXCOORD2 and TEXCOORD3 are the 2nd, 3rd and 4th UV coordinates, respectively. TANGENT is the tangent vector (used for normal mapping), typically a float4. COLOR is the per-vertex color, typically a float4.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Writing vertex and fragment shaders</category>
+        <category>Providing vertex data to vertex programs</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Accessing shader properties in Cg/HLSL]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F10%2FAccessing-shader-properties-in-Cg-HLSL%2F</url>
+    <content type="text"><![CDATA[网址：Accessing shader properties in Cg/HLSL Accessing shader properties in Cg/HLSLProperty types in ShaderLab map to Cg/HLSL variable types this way Color and Vector properties map to float4, half4 or fixed4 variables. Range and Float properties map to float, half or fixed variables. Texture properties map to sampler2D variables for regular (2D) textures; Cubemaps map to samplerCUBE; and 3D textures map to sampler3D.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Writing vertex and fragment shaders</category>
+        <category>Accessing shader properties in Cg/HLSL</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Writing vertex and fragment shaders]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F10%2FWriting-vertex-and-fragment-shaders%2F</url>
+    <content type="text"><![CDATA[网址：Writing vertex and fragment shaders HLSL snippets #pragma vertex name - compile function name as the vertex shader. #pragma fragment name - compile function name as the fragment shader. #pragma geometry name - compile function name as DX10 geometry shader. Having this option automatically turns on - #pragma target 4.0, described below. #pragma hull name - compile function name as DX11 hull shader. Having this option automatically turns on - #pragma target 5.0, described below. #pragma domain name - compile function name as DX11 domain shader. Having this option automatically turns on #pragma target 5.0, described below. #pragma target name - which shader target to compile to. See Shader Compilation Targets page for details. #pragma only_renderers space separated names - compile shader only for given renderers. By default shaders are compiled for all renderers. See Renderers below for details. #pragma exclude_renderers space separated names - do not compile shader for given renderers. By default shaders are compiled for all renderers. See Renderers below for details. #pragma multi_compile … - for working with multiple shader variants. #pragma enable_d3d11_debug_symbols - generate debug information for shaders compiled for DirectX 11, this will allow you to debug shaders via Visual Studio 2012 (or higher) Graphics debugger. #pragma hardware_tier_variants renderer name - generate multiple shader hardware variants of each compiled shader, for each hardware tier that could run the selected renderer. See Renderers below for details. Rendering platforms d3d9 - Direct3D 9 d3d11 - Direct3D 11/12 glcore - OpenGL 3.x/4.x gles - OpenGL ES 2.0 gles3 - OpenGL ES 3.x metal - iOS/Mac Metal vulkan - Vulkan d3d11_9x - Direct3D 11 9.x feature level, as commonly used on WSA platforms xboxone - Xbox One ps4 - PlayStation 4 psp2 - PlayStation Vita n3ds - Nintendo 3DS wiiu - Nintendo Wii U]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Reference</category>
+        <category>Shader Reference</category>
+        <category>Writing vertex and fragment shaders</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Optimizing Shader Load Time]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F07%2FOptimizing-Shader-Load-Time%2F</url>
+    <content type="text"><![CDATA[网址：Optimizing Shader Load Time Optimizing Shader Load Time 太多 shader 影响 build time，还会增加游戏大小 读取太多 shader 会影响启动时间，也会增加内存 Shader build time stripping Unity 会在 Build 的时候检查用到的 shader 检查 #pragma shader_feature 的使用 检查场景中 Fog 和 Lightmapping 的使用 Default Unity shader loading behavior Unity 读取 shader 的时候，只有当使用到具体的变种的 shader 的时候，才会去创建，这样子可以减少读取时间还有内存占用 Shader Variant Collections ShaderVariantCollection 用于标记 shader 关键字 Graphics Settings 可以根据场景状况显示使用的 shader variant（包括运行时）]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Optimizing graphics performance</category>
+        <category>Optimizing Shader Load Time</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Frame Debugger]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F07%2FFrame-Debugger%2F</url>
+    <content type="text"><![CDATA[网址：Frame Debugger Remote Frame Debugger iOS 不支持 发包时候得开启 Development Build、 PC 得开启 Run in Background 游戏得在前台，特别注意 PC 包，无法和 Editor 同时在前台]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Optimizing graphics performance</category>
+        <category>Frame Debugger</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Modeling characters for optimal performance]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F07%2FModeling-characters-for-optimal-performance%2F</url>
+    <content type="text"><![CDATA[网址：Modeling characters for optimal performance Modeling characters for optimal performanceUse a single skinned Mesh Renderer Unity 使用剔除和包围盒来优化动画 限制是使用一个动画组件和一个蒙皮网格 Use as few materials as possible 一般一个模型一个 material 就行了，除非是为了使用不一样的 shader，一般一个模型两到三个材质球就足够了 Use as few bones as possible PC 一般50~60骨骼 手机低于30 Polygon count PC 一般1500~4000个面 手机一般300~1500个面 Keep forward and inverse kinematics separate When animations are imported, a model’s inverse kinematic (IK) nodes are baked into forward kinematics (FK) and as a result, Unity doesn’t need the IK nodes at all. However, if they are left in the model then they will have a CPU overhead even though they don’t affect the animation. You can delete the redundant IK nodes in Unity or in the modeling tool, according to your preference. Ideally, you should keep separate IK and FK hierarchies during modeling to make it easier to remove the IK nodes when necessary.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Optimizing graphics performance</category>
+        <category>Modeling characters for optimal performance</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Draw call batching]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F07%2FDraw-call-batching%2F</url>
+    <content type="text"><![CDATA[网址：Draw call batching Draw call batching 动态合批：for small enough Meshes, this transforms their vertices on the CPU, groups many similar vertices together, and draws them all in one go. 静态合批： combines static (not moving) GameObjects into big Meshes, and renders them in a faster way. 动态合批会增加 CPU 消耗，静态合批会增加内存和存储消耗 Material set-up for batching 只有共用一个 material 的物体可以合批 如果两个 material 仅仅是贴图不一样，可以合并图集 阴影可以动态合批，因为使用的相同的 pass Dynamic batching 由于需要在 CPU 将所有物体的顶点转到世界坐标，所以仅对小物体有更好的优化效果 限制要求 Batching dynamic GameObjects has certain overhead per vertex, so batching is applied only to Meshes containing fewer than 900 vertex attributes in total. If your Shader is using Vertex Position, Normal and single UV, then you can batch up to 300 verts, while if your Shader is using Vertex Position, Normal, UV0, UV1 and Tangent, then only 180 verts. Note: attribute count limit might be changed in future. GameObjects are not batched if they contain mirroring on the transform (for example GameObject A with +1 scale and GameObject B with –1 scale cannot be batched together). Using different Material instances causes GameObjects not to batch together, even if they are essentially the same. The exception is shadow caster rendering. GameObjects with lightmaps have additional renderer parameters: lightmap index and offset/scale into the lightmap. Generally, dynamic lightmapped GameObjects should point to exactly the same lightmap location to be batched. Multi-pass Shaders break batching. Almost all Unity Shaders support several Lights in forward rendering, effectively doing additional passes for them. The draw calls for “additional per-pixel lights” are not batched. The Legacy Deferred (light pre-pass) rendering path has dynamic batching disabled, because it has to draw GameObjects twice. Static batching 一般比动态合批更有效率（不消耗 CPU 转换顶点），但是需要更多的内存 并不减少 draw calls，减少状态转换 Batches are limited to 64k vertices and 64k indices on most platforms (48k indices on OpenGLES, 32k indices on macOS). 是在 Build Player 阶段进行的合并网格（尽管如此还是得开启 read write enable，并且会同时存在合并后的网格和原始网格） Tips Currently, only Mesh Renderers, Trail Renderers, Line Renderers, Particle Systems and Sprite Renderers are batched. This means that skinned Meshes, Cloth, and other types of rendering components are not batched. Semi-transparent Shaders usually require GameObjects to be rendered in back-to-front order for transparency to work. Unity first orders GameObjects in this order, and then tries to batch them, but because the order must be strictly satisfied, this often means less batching can be achieved than with opaque GameObjects. Manually combining GameObjects that are close to each other can be a very good alternative to draw call batching. For example, a static cupboard with lots of drawers often makes sense to just combine into a single Mesh, either in a 3D modeling application or using Mesh.CombineMeshes.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Optimizing graphics performance</category>
+        <category>Draw call batching</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Directional light shadows]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F06%2FDirectional-light-shadows%2F</url>
+    <content type="text"><![CDATA[Directional light shadows Shadow cascades cascaded shadow maps 虽然会增大内存，但是也比纯增加分辨率来得好 Shadow distance shadow cascades 在手机上不支持]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Lighting</category>
+        <category>Shadows</category>
+        <category>Directional light shadows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Graphics Command Buffers]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F06%2FGraphics-Command-Buffers%2F</url>
+    <content type="text"><![CDATA[Graphics Command Buffers A high-level overview of how cameras render scene in Unity is shown below. At each point marked with a green dot, you can add command buffers to execute your commands.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Advanced Rendering Features</category>
+        <category>Graphics Command Buffers</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Light troubleshooting and performance]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F06%2FLight-troubleshooting-and-performance%2F</url>
+    <content type="text"><![CDATA[Light troubleshooting and performance Shadow performance 软阴影比起硬阴影，会更多的影响 GPU，CPU 消耗是相同的 How the size of a shadow map is calculated 点光源比起其它光源更限制贴图大小，是因为使用了立方体贴图阴影，必须同时载入6张图 Troubleshooting shadows 如果发现没有阴影可以根据以下去查 旧显卡可能不支持阴影 Quality Settings 可以关闭阴影 Mesh Renderers 是否开启了接收和投射阴影 仅有不透明物体接受和投射阴影 自定义 shader 必须使用几何队列，并且是像素光照 VertexLit Shader （顶点光照 Shader）可以投射阴影，但是不能接受阴影 使用前向渲染，一些 shader 只允许最亮的光投射阴影；使用延迟渲染或者使用支持 fullforwardshadows 的表面着色器 Hardware support for shadows Built-in shadows work on almost all devices supported by Unity. The following cards are supported on each platform PC (Windows/Mac/Linux) Generally all GPUs support shadows. Exceptions might occur in some really old GPUs (for example, Intel GPUs made in 2005). Mobile iPhone 4 does not support shadows. All later models starting with iPhone 4S and iPad 2 support shadows. Android: Requires Android 4.0 or later, and GL_OES_depth_texture support. Most notably, some Android Tegra 2/3-based Android devices do not have this, so they don’t support shadows. Windows Phone: Shadows are only supported on DX11-class GPUs (Adreno 4xx/5xx).]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Lighting</category>
+        <category>Global Illumination</category>
+        <category>Light troubleshooting and performance</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Optimizing graphics performance]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F05%2FOptimizing-graphics-performance%2F</url>
+    <content type="text"><![CDATA[Optimizing graphics performance Locate high graphics impactCommon bottlenecks and ways to check for them GPU 一般都限制于填充率或者带宽 因此可以降低分辨率 CPU 一般限制于 batches 数量 Less-common bottlenecks: GPU 太多顶点数，受 shader 的复杂计算影响 CPU 太多顶点数 CPU optimization## Reduce the visible object count. To reduce the amount of work the CPU needs to do 合并物体 减少材质球，合并纹理 减少渲染次数 GPU: Optimizing model geometry 相比建模软件，显卡为了表示模型，有可能会展开更多的顶点 如果顶点有多个法线、uv 坐标、顶点色之类的，必须划分成更多的顶点 虽然模型中的几何量大多和 GPU 相关，但是 Unity 也会在 CPU 处理模型（例如蒙皮网格） Lighting performance 使用光照贴图大概快2到3倍，并且表现更好 Lights in forward rendering 防止间隔太远的地方的物体合并网格并且受不同的光照，因为光照会应用与整个合并后的网格，尽管并没受到光照 优化像素光照，可以减少 CPU draw calls GPU: Texture compression and mipmaps 压缩贴图，可以减少读取时间，更少的内存占用，显著提升渲染性能 Texture mipmaps 打开 mipmaps，能让 GPU 使用更低像素的纹理 LOD and per-layer cull distances 使用 LOD camera 设置远距离裁剪 给小物体单独一个 layer，然后通过 Camera.layerCullDistances 单独设置裁剪距离 Realtime shadows 实时阴影会额外增加 CPU draw calls 和 GPU 的处理 GPU: Tips for writing high-performance shadersComplex mathematical operations 考虑使用查找纹理代替负责数学运算 防止自己计算，尽量使用 Unity 提供的函数 Alpha Test 会使片段着色器变慢 Floating point precision 桌面 GPU 忽视浮点精确度 Simple checklist to make your game faster 在 PC 上控制顶点数少于 200K 和 3M 手机上使用 Mobile 和 无光照 shader 尽量少用 material，并且共用一个 对于不动的物体开启 static 只使用一个像素光照 烘焙光照代替动态光 使用压缩纹理 防止使用雾效 使用 Occlusion Culling 使用 skybox “隐藏”远的物体 使用 pixel shaders 或者合并贴图 shader 使用 half 精度 shader 中减少复杂的数学运算 片段着色器少用贴图]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Optimizing graphics performance</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Procedural Materials]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F04%2FProcedural-Materials%2F</url>
+    <content type="text"><![CDATA[Procedural Materials 物理材质本质上和标准的材质是相同的 唯一的区别是可以使用运行时生成的纹理]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Procedural Materials</category>
+        <category>Procedural Materials</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Asynchronous Texture Upload]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F03%2FAsynchronous-Texture-Upload%2F</url>
+    <content type="text"><![CDATA[Asynchronous Texture Upload Asynchronous Texture Upload enables asynchronous loading of Texture Data from disk and enables time-sliced upload to GPU on the Render-thread 对于没有开启读写的纹理，这个是自动开启的 目测不支持AB，所以并没卵用 Simple &amp; Full Control Over Memory / Time-Slicing 在 QualitySettings 里面可以设置异步提交时间和 Buffer 大小]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Advanced Rendering Features</category>
+        <category>Asynchronous Texture Upload</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[CullingGroup API]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F03%2FCullingGroup-API%2F</url>
+    <content type="text"><![CDATA[CullingGroup API CullingGroup offers a way to integrate your own systems into Unity’s culling and LOD pipeline. CullingGroup API Best PracticesUsing visibilityUsing distancePerformance and design]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Advanced Rendering Features</category>
+        <category>CullingGroup API</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Graphics hardware capabilities and emulation]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F03%2FGraphics-hardware-capabilities-and-emulation%2F</url>
+    <content type="text"><![CDATA[Graphics hardware capabilities and emulation Edit &gt; Graphics Emulation，可以模拟显卡，支持模拟哪些，还得看显卡的支持 列出了不同显卡支持功能 Shader Model 4 (Standalone &amp; Windows Store platforms)Shader Model 3 (Standalone platform)Shader Model 2 (Standalone platform)OpenGL ES 3.0 (Android platform)Metal (iOS, tvOS platforms)OpenGL ES 2.0 (Android, iOS, tvOS, Tizen platforms)WebGL 1 and WebGL 2 (WebGL platform)Shader Model 2 - DX11 FL9.3 (Windows Store Platform)]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Advanced Rendering Features</category>
+        <category>Graphics hardware capabilities and emulation</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Sparse Textures]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F03%2FSparse-Textures%2F</url>
+    <content type="text"><![CDATA[Sparse Textures 支持的设备需求不太明确]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Advanced Rendering Features</category>
+        <category>Sparse Textures</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[GPU instancing]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F03%2FGPU-instancing%2F</url>
+    <content type="text"><![CDATA[GPU instancing Introduction 选多同一个 mesh 多次在同一时刻，牺牲一点 draw call 虽然是渲染同一个 mesh，但是可以有不同的参数 Adding instancing to your MaterialsGPU Instancing is available on the following platforms and APIs: DirectX 11 and DirectX 12 on Windows OpenGL Core 4.1+/ES3.0+ on Windows, macOS, Linux, iOS and Android Metal on macOS and iOS Vulkan on Windows and Android PlayStation 4 and Xbox One WebGL (requires WebGL 2.0 API) Advanced GPU instancing tipsBatching priority 优先顺序：静态合并 -》GPU Instancing -》动态合并 UnityObjectToClipPos 这玩意效率更高，比起自己写转换 Further notes For Graphics.DrawMeshInstanced, you need to enable GPU Instancing on the Material that is being passed into this method. However, Graphics.DrawMeshInstancedIndirect does not require you to enable GPU Instancing. The indirect instancing keyword PROCEDURAL_INSTANCING_ON is not affected by stripping. Instanced draw calls appear in the Frame Debugger as Draw Mesh (instanced). When using forward rendering, Unity cannot efficiently instance objects that are affected by multiple lights. Only the base pass can make effective use of instancing, not the added passes. For more information about lighting passes, see documentation on Forward Rendering and Pass Tags Objects that use lightmaps, or are affected by different light or Reflection Probes, can’t be instanced. If you have more than two passes for multi-pass Shaders, only the first passes can be instanced. This is because Unity forces the later passes to be rendered together for each object, forcing Material changes.]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Advanced Rendering Features</category>
+        <category>GPU instancing</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Compute shaders]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F01%2FCompute-shaders%2F</url>
+    <content type="text"><![CDATA[Compute shaders compute shaders 跑在显卡上，在正常的渲染管线之外 主要用于大量的并行运算 Windows and Windows Store, with a DirectX 11 or DirectX 12 graphics API and Shader Model 5.0 GPU macOS and iOS using Metal graphics API Android, Linux and Windows platforms with Vulkan API Modern OpenGL platforms (OpenGL 4.3 on Linux or Windows; OpenGL ES 3.1 on Android). Note that Mac - OS X does not support OpenGL 4.3 Modern consoles (Sony PS4 and Microsoft Xbox One)]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Advanced Rendering Features</category>
+        <category>Compute shaders</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Rendering Paths]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F01%2FRendering-Paths%2F</url>
+    <content type="text"><![CDATA[Rendering Paths Rendering Paths ComparisonDeferred Forward Legacy Deferred Vertex LitFeaturesPer-pixel lighting (normal maps, light cookies) Yes Yes Yes -Realtime shadows Yes With caveats Yes -Reflection Probes Yes Yes - -Depth&amp;Normals Buffers Yes Additional render passes Yes -Soft Particles Yes - Yes -Semitransparent objects - Yes - YesAnti-Aliasing - Yes - YesLight Culling Masks Limited Yes Limited YesLighting Fidelity All per-pixel Some per-pixel All per-pixel All per-vertexPerformanceCost of a per-pixel Light Number of pixels it illuminates Number of pixels * Number of objects it illuminates Number of pixels it illuminates -Number of times objects are normally rendered 1 Number of per-pixel lights 2 1Overhead for simple scenes High None Medium NonePlatform SupportPC (Windows/Mac) Shader Model 3.0+ &amp; MRT All Shader Model 3.0+ AllMobile (iOS/Android) OpenGL ES 3.0 &amp; MRT All OpenGL ES 2.0 AllConsoles XB1, PS4 All XB1, PS4, 360 -]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Advanced Rendering Features</category>
+        <category>Rendering Paths</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[High Dynamic Range Rendering]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F01%2FHigh-Dynamic-Range-Rendering%2F</url>
+    <content type="text"><![CDATA[High Dynamic Range Rendering 正常渲染下，0代表最小，1代表最大 然而显示场景，人眼倾向于适应环境光照 因此白色物体在光亮的地方没有在灰暗的地方显得那么亮 人眼对于低光场景更为敏感 尽管使用 HDR，最终还是会将值调整为显示设备可用的范围 本质是让显卡内部支持用0-1之外的范围表示颜色 Advantages of HDR 高光环境颜色不会丢失 Disadvantages of HDR 使用浮点渲染纹理（渲染变慢，并且需要更多的内存） 不支持反锯齿 不是所有的硬件都支持]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Advanced Rendering Features</category>
+        <category>High Dynamic Range Rendering</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Post-processing stack]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F01%2FPost-processing-stack%2F</url>
+    <content type="text"><![CDATA[Post-processing stack 能将特效都在单通道上处理 Effects Anti-aliasing (FXAA &amp; TAA) Ambient Occlusion Screen Space Reflection Fog Depth of Field Motion Blur Eye Adaptation Bloom Color Grading User Lut Chromatic Aberration Grain Vignette Dithering]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Post-processing overview</category>
+        <category>Post-processing stack</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Accessing and Modifying Material parameters via script]]></title>
+    <url>%2FUnityManual.io%2F2017%2F07%2F01%2FAccessing-and-Modifying-Material-parameters-via-script%2F</url>
+    <content type="text"><![CDATA[Accessing and Modifying Material parameters via script Special requirements for Scripting with the Standard ShaderYou must enable the correct Keywords for your required Standard Shader variant Keyword Feature _NORMALMAP Normal Mapping _ALPHATEST_ON “Cut out” Transparency Rendering Mode _ALPHABLEND_ON “Fade” Transparency Rendering Mode _ALPHAPREMULTIPLY_ON “Transparent” Transparency Rendering Mode _EMISSION Emission Colour or Emission Mapping _PARALLAXMAP Height Mapping _DETAIL_MULX2 Secondary “Detail” Maps (Albedo &amp; Normal Map) _METALLICGLOSSMAP Metallic/Smoothness Mapping in Metallic Workflow _SPECGLOSSMAP Specular/Smoothness Mapping in Specular Workflow]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Materials, Shaders &amp; Textures</category>
+        <category>Accessing and Modifying Material parameters via script</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Linear or gamma workflow]]></title>
+    <url>%2FUnityManual.io%2F2017%2F06%2F30%2FLinear-or-gamma-workflow%2F</url>
+    <content type="text"><![CDATA[Linear or gamma workflow 图片一般保存在 Gamma 空间 Linear color space workflow gamma texture 将会移除伽玛校正 Linear Textures bypass sRGB Sampling：关闭的话，将会采集 sRGB，使纹理变成 sRGB 格式 如果纹理原本是在 linear 空间的，则需要关闭 bypass sRGB Sampling Notes 对于 colors，unity 在传入 GPU 前就会使用 floating 对于 texture，unity 会去除伽玛校正 当把结果写进 framebuffer，可能直接使用伽玛校正，或者保留，取决于后面的处理]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Lighting</category>
+        <category>Related topics</category>
+        <category>Linear rendering overview</category>
+        <category>Linear or gamma workflow</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Gamma Textures with linear rendering]]></title>
+    <url>%2FUnityManual.io%2F2017%2F06%2F30%2FGamma-Textures-with-linear-rendering%2F</url>
+    <content type="text"><![CDATA[Gamma Textures with linear rendering Lightmapping 光照计算是在 linear 下完成的 光照贴图存储是 gamma 空间 linear 模式得转换贴图，gamma 模式不用转换（那为什么切换模式需要重新烘焙？） Importing lightmaps 光照数据 EXR 文件是在 linear 空间创建的，导入的时候会转成 gamma 空间 使用外部光照纹理，纹理标记为 lightmap，这时候 bypass sRGB Sampling 是开启的 Linear supported platforms 如若开启 linear 不支持，将会运行时退出 支持 win，mac，iOS，Android Android 需要 GLES3，Android 4.3 iOS 需要 Metal]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Lighting</category>
+        <category>Related topics</category>
+        <category>Linear rendering overview</category>
+        <category>Gamma Textures with linear rendering</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Linear rendering overview]]></title>
+    <url>%2FUnityManual.io%2F2017%2F06%2F30%2FLinear-rendering-overview%2F</url>
+    <content type="text"><![CDATA[Linear rendering overview Linear and gamma color space 人眼看光线没有 linear 反应 历史原因，显示器也是用的 gamma 空间 gamma 更符合人眼，但是计算如果也是用 gamma，计算的光照强度就不真实]]></content>
+      <categories>
+        <category>Graphics</category>
+        <category>Graphics Overview</category>
+        <category>Lighting</category>
+        <category>Related topics</category>
+        <category>Linear rendering overview</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Reducing the file size of your build]]></title>
+    <url>%2FUnityManual.io%2F2017%2F06%2F30%2FReducing-the-file-size-of-your-build%2F</url>
+    <content type="text"><![CDATA[Reducing the file size of your build Suggestions for reducing build sizeMeshes and Animations Mesh 压缩只减少精度，因此只减少硬盘，不减少内存 Animation 帧减少，因此硬盘和内存都会减少 DLLs 必有的 dll：mscorlib.dll，Boo.Lang.dll，UnityScript.Lang.dll，UnityEngine.dll]]></content>
+      <categories>
+        <category>Working In Unity</category>
+        <category>Advanced Development</category>
+        <category>Reducing the file size of your build</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Memory Profiler]]></title>
+    <url>%2FUnityManual.io%2F2017%2F06%2F30%2FMemory-Profiler%2F</url>
+    <content type="text"><![CDATA[Memory Profiler Simple Unity：Unity 占用内存大小 Mono：托管块大小 GfxDriver：贴图，渲染，Shader，网格内存 FMOD：声卡内存大小 Profiler：分析模块内存占用]]></content>
+      <categories>
+        <category>Working In Unity</category>
+        <category>Advanced Development</category>
+        <category>Profiler overview</category>
+        <category>Memory Profiler</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Profiler window]]></title>
+    <url>%2FUnityManual.io%2F2017%2F06%2F30%2FProfiler-window%2F</url>
+    <content type="text"><![CDATA[Profiler window Deep Profiling 使用 Deep 将会分析所有的代码 View SyncTime “Wait For Target FPS”，如果没有开启同步的话，将会显示等待时间 可以关闭]]></content>
+      <categories>
+        <category>Working In Unity</category>
+        <category>Advanced Development</category>
+        <category>Profiler overview</category>
+        <category>Profiler window</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Trouble Shooting]]></title>
     <url>%2FUnityManual.io%2F2017%2F06%2F29%2FTrouble-Shooting%2F</url>
     <content type="text"><![CDATA[Trouble Shooting Shadows 手游不支持软阴影 前向渲染仅支持一个方向光投影Some of my objects do not cast or receive shadows 只有不透明物体接受或者投射阴影 顶点 shader 不接受阴影，但是可以投射阴影 只有像素光照投射阴影]]></content>

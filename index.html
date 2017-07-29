@@ -284,7 +284,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/06/29/Trouble-Shooting/">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/29/Special-optimizations/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fly">
@@ -306,8 +306,8 @@
             
               
                 
-                <a class="post-title-link" href="/UnityManual.io/2017/06/29/Trouble-Shooting/" itemprop="url">
-                  Trouble Shooting
+                <a class="post-title-link" href="/UnityManual.io/2017/07/29/Special-optimizations/" itemprop="url">
+                  Special optimizations
                 </a>
               
             
@@ -323,8 +323,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T20:34:25+08:00">
-                2017-06-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-29T17:12:07+08:00">
+                2017-07-29
               </time>
             
 
@@ -339,8 +339,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-06-29T20:42:28+08:00">
-                2017-06-29
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-29T17:36:50+08:00">
+                2017-07-29
               </time>
             
           </span>
@@ -358,8 +358,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/UnityManual.io/categories/Working-In-Unity/" itemprop="url" rel="index">
-                    <span itemprop="name">Working In Unity</span>
+                  <a href="/UnityManual.io/categories/Best-practice-guides/" itemprop="url" rel="index">
+                    <span itemprop="name">Best practice guides</span>
                   </a>
                 </span>
 
@@ -369,8 +369,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/UnityManual.io/categories/Working-In-Unity/Creating-Gameplay/" itemprop="url" rel="index">
-                    <span itemprop="name">Creating Gameplay</span>
+                  <a href="/UnityManual.io/categories/Best-practice-guides/Understanding-optimization-in-Unity/" itemprop="url" rel="index">
+                    <span itemprop="name">Understanding optimization in Unity</span>
                   </a>
                 </span>
 
@@ -380,8 +380,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/UnityManual.io/categories/Working-In-Unity/Creating-Gameplay/Trouble-Shooting/" itemprop="url" rel="index">
-                    <span itemprop="name">Trouble Shooting</span>
+                  <a href="/UnityManual.io/categories/Best-practice-guides/Understanding-optimization-in-Unity/Special-optimizations/" itemprop="url" rel="index">
+                    <span itemprop="name">Special optimizations</span>
                   </a>
                 </span>
 
@@ -418,13 +418,30 @@
         
           
             <hr>
-<p><a href="https://docs.unity3d.com/Manual/TroubleShooting.html" target="_blank" rel="external">Trouble Shooting</a></p>
-<h1 id="Shadows"><a href="#Shadows" class="headerlink" title="Shadows"></a>Shadows</h1><ul>
-<li>手游不支持软阴影</li>
-<li>前向渲染仅支持一个方向光投影<h2 id="Some-of-my-objects-do-not-cast-or-receive-shadows"><a href="#Some-of-my-objects-do-not-cast-or-receive-shadows" class="headerlink" title="Some of my objects do not cast or receive shadows"></a>Some of my objects do not cast or receive shadows</h2></li>
-<li>只有不透明物体接受或者投射阴影</li>
-<li>顶点 shader 不接受阴影，但是可以投射阴影</li>
-<li>只有像素光照投射阴影</li>
+<p><a href="https://docs.unity3d.com/Manual/BestPracticeUnderstandingPerformanceInUnity8.html" target="_blank" rel="external">网址：Special optimizations</a></p>
+<h1 id="Multidimensional-vs-jagged-arrays"><a href="#Multidimensional-vs-jagged-arrays" class="headerlink" title="Multidimensional vs. jagged arrays"></a>Multidimensional vs. jagged arrays</h1><ul>
+<li>使用数组的数组代替多维数组</li>
+</ul>
+<h1 id="Particle-System-pooling"><a href="#Particle-System-pooling" class="headerlink" title="Particle System pooling"></a>Particle System pooling</h1><ul>
+<li>粒子很占内存，所以可以的话尽量通过配置表共用一种粒子来做池</li>
+</ul>
+<h1 id="Update-managers"><a href="#Update-managers" class="headerlink" title="Update managers"></a>Update managers</h1><ul>
+<li>减少 Update，尽可能在调用前做判断跳过</li>
+</ul>
+<h1 id="Using-C-delegates-in-an-update-manager"><a href="#Using-C-delegates-in-an-update-manager" class="headerlink" title="Using C# delegates in an update manager"></a>Using C# delegates in an update manager</h1><ul>
+<li>C# deleagate 每次 add 和 remove 都会触发深度拷贝，因此考虑用别的类型代替这些操作</li>
+</ul>
+<h1 id="Loading-thread-control"><a href="#Loading-thread-control" class="headerlink" title="Loading thread control"></a>Loading thread control</h1><ul>
+<li>可以单独设置线程的优先度来优化效率</li>
+</ul>
+<h1 id="Mass-object-movement-amp-CullingGroups"><a href="#Mass-object-movement-amp-CullingGroups" class="headerlink" title="Mass object movement &amp; CullingGroups"></a>Mass object movement &amp; CullingGroups</h1><ul>
+<li>优化不显示的物体</li>
+</ul>
+<h1 id="Reducing-method-call-overhead"><a href="#Reducing-method-call-overhead" class="headerlink" title="Reducing method call overhead"></a>Reducing method call overhead</h1><ul>
+<li>for 里面的赋值放到外面</li>
+</ul>
+<h2 id="Trivial-properties"><a href="#Trivial-properties" class="headerlink" title="Trivial properties"></a>Trivial properties</h2><ul>
+<li>固定属性值的访问，改为静态，或者只在第一次使用的时候进行计算</li>
 </ul>
 <hr>
 
@@ -470,7 +487,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/06/29/Importing-from-the-Asset-Store/">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/29/General-Optimizations/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fly">
@@ -492,8 +509,8 @@
             
               
                 
-                <a class="post-title-link" href="/UnityManual.io/2017/06/29/Importing-from-the-Asset-Store/" itemprop="url">
-                  Importing from the Asset Store
+                <a class="post-title-link" href="/UnityManual.io/2017/07/29/General-Optimizations/" itemprop="url">
+                  General Optimizations
                 </a>
               
             
@@ -509,8 +526,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T20:11:50+08:00">
-                2017-06-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-29T17:04:28+08:00">
+                2017-07-29
               </time>
             
 
@@ -525,8 +542,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-06-29T20:37:03+08:00">
-                2017-06-29
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-29T17:11:38+08:00">
+                2017-07-29
               </time>
             
           </span>
@@ -544,8 +561,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/UnityManual.io/categories/Working-In-Unity/" itemprop="url" rel="index">
-                    <span itemprop="name">Working In Unity</span>
+                  <a href="/UnityManual.io/categories/Best-practice-guides/" itemprop="url" rel="index">
+                    <span itemprop="name">Best practice guides</span>
                   </a>
                 </span>
 
@@ -555,8 +572,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/UnityManual.io/categories/Working-In-Unity/Asset-Workflow/" itemprop="url" rel="index">
-                    <span itemprop="name">Asset Workflow</span>
+                  <a href="/UnityManual.io/categories/Best-practice-guides/Understanding-optimization-in-Unity/" itemprop="url" rel="index">
+                    <span itemprop="name">Understanding optimization in Unity</span>
                   </a>
                 </span>
 
@@ -566,8 +583,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/UnityManual.io/categories/Working-In-Unity/Asset-Workflow/Importing-from-the-Asset-Store/" itemprop="url" rel="index">
-                    <span itemprop="name">Importing from the Asset Store</span>
+                  <a href="/UnityManual.io/categories/Best-practice-guides/Understanding-optimization-in-Unity/General-Optimizations/" itemprop="url" rel="index">
+                    <span itemprop="name">General Optimizations</span>
                   </a>
                 </span>
 
@@ -604,10 +621,1653 @@
         
           
             <hr>
-<p><a href="https://docs.unity3d.com/Manual/AssetStore.html" target="_blank" rel="external">Importing from the Asset Store</a></p>
-<h1 id="Location-of-downloaded-Asset-files"><a href="#Location-of-downloaded-Asset-files" class="headerlink" title="Location of downloaded Asset files"></a>Location of downloaded Asset files</h1><ul>
-<li>Mac ~/Library/Unity/Asset Store</li>
-<li>Win C:\Users\accountName\AppData\Roaming\Unity\Asset Store</li>
+<p><a href="https://docs.unity3d.com/Manual/BestPracticeUnderstandingPerformanceInUnity7.html" target="_blank" rel="external">网址：General Optimizations</a></p>
+<h1 id="Address-Properties-by-ID"><a href="#Address-Properties-by-ID" class="headerlink" title="Address Properties by ID"></a>Address Properties by ID</h1><ul>
+<li>使用 Hash 代替 string 作为索引</li>
+</ul>
+<h1 id="Use-non-allocating-physics-APIs"><a href="#Use-non-allocating-physics-APIs" class="headerlink" title="Use non-allocating physics APIs"></a>Use non-allocating physics APIs</h1><ul>
+<li>使用 non-allocating 接口</li>
+</ul>
+<h1 id="Transform-manipulation"><a href="#Transform-manipulation" class="headerlink" title="Transform manipulation"></a>Transform manipulation</h1><ul>
+<li>Transform 的改变会引起 OnTransformChanged，合并或者尽量减少修改</li>
+</ul>
+<h2 id="Vector-and-quaternion-math-and-order-of-operations"><a href="#Vector-and-quaternion-math-and-order-of-operations" class="headerlink" title="Vector and quaternion math and order of operations"></a>Vector and quaternion math and order of operations</h2><ul>
+<li>由于类型转换的原因，尽量先计算简单的类型</li>
+</ul>
+<h1 id="Built-In-ColorUtility"><a href="#Built-In-ColorUtility" class="headerlink" title="Built-In ColorUtility"></a>Built-In ColorUtility</h1><ul>
+<li>使用 Unity 内置的这个颜色转换接口</li>
+</ul>
+<h1 id="Find-and-FindObjectOfType"><a href="#Find-and-FindObjectOfType" class="headerlink" title="Find and FindObjectOfType"></a>Find and FindObjectOfType</h1><ul>
+<li>减少调用</li>
+</ul>
+<h2 id="Camera-locators"><a href="#Camera-locators" class="headerlink" title="Camera locators"></a>Camera locators</h2><p>Internally, Unity’s Camera.main property calls Object.FindObjectWithTag, a specialized variant of Object.FindObject. Accessing this property is no more efficient than a call to Object.FindObjectOfType. If code must address the main camera, it is strongly recommended to do one of two things:</p>
+<ul>
+<li>Access Camera.main in a Start orOnEnable callback and cache the resulting reference.</li>
+<li>Construct a Camera Manager class that can provide or inject a reference to the active camera.</li>
+</ul>
+<h1 id="Debug-code-amp-the-conditional-attribute"><a href="#Debug-code-amp-the-conditional-attribute" class="headerlink" title="Debug code &amp; the [conditional] attribute"></a>Debug code &amp; the [conditional] attribute</h1><ul>
+<li>懒人谁会用啊</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/29/Understanding-the-managed-heap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/29/Understanding-the-managed-heap/" itemprop="url">
+                  Understanding the managed heap
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-29T14:17:39+08:00">
+                2017-07-29
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-29T15:31:13+08:00">
+                2017-07-29
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Best-practice-guides/" itemprop="url" rel="index">
+                    <span itemprop="name">Best practice guides</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Best-practice-guides/Understanding-optimization-in-Unity/" itemprop="url" rel="index">
+                    <span itemprop="name">Understanding optimization in Unity</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Best-practice-guides/Understanding-optimization-in-Unity/Understanding-the-managed-heap/" itemprop="url" rel="index">
+                    <span itemprop="name">Understanding the managed heap</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/BestPracticeUnderstandingPerformanceInUnity4-1.html" target="_blank" rel="external">网址：Understanding the managed heap</a></p>
+<h1 id="Technical-details-how-the-managed-heap-operates-and-why-it-expands"><a href="#Technical-details-how-the-managed-heap-operates-and-why-it-expands" class="headerlink" title="Technical details: how the managed heap operates and why it expands"></a>Technical details: how the managed heap operates and why it expands</h1><ul>
+<li>每次 GC 会移动内存块，没回收的移动到一块，使其紧密</li>
+<li>大内存占用的不移动，因为移动消耗巨大</li>
+</ul>
+<h1 id="Key-problems-with-the-heap"><a href="#Key-problems-with-the-heap" class="headerlink" title="Key problems with the heap"></a>Key problems with the heap</h1><ul>
+<li>堆内存只增不减</li>
+</ul>
+<h1 id="Basic-memory-conservation"><a href="#Basic-memory-conservation" class="headerlink" title="Basic memory conservation"></a>Basic memory conservation</h1><h2 id="Collection-and-array-reuse"><a href="#Collection-and-array-reuse" class="headerlink" title="Collection and array reuse"></a>Collection and array reuse</h2><ul>
+<li>重复利用数组，减少浪费</li>
+</ul>
+<h2 id="Closures-and-anonymous-methods"><a href="#Closures-and-anonymous-methods" class="headerlink" title="Closures and anonymous methods"></a>Closures and anonymous methods</h2><ul>
+<li>减少匿名函数的使用，特别是闭包</li>
+</ul>
+<h2 id="Anonymous-methods-under-IL2CPP"><a href="#Anonymous-methods-under-IL2CPP" class="headerlink" title="Anonymous methods under IL2CPP"></a>Anonymous methods under IL2CPP</h2><ul>
+<li>Prefer coding styles that do not require passing methods as arguments.</li>
+<li>When unavoidable, prefer anonymous methods over predefined methods.</li>
+<li>Avoid closures, regardless of scripting backend.</li>
+</ul>
+<h1 id="Boxing"><a href="#Boxing" class="headerlink" title="Boxing"></a>Boxing</h1><h2 id="Dictionaries-and-enums"><a href="#Dictionaries-and-enums" class="headerlink" title="Dictionaries and enums"></a>Dictionaries and enums</h2><ul>
+<li>定义一个类实现 IEqualityComparer</li>
+</ul>
+<h2 id="Empty-array-reuse"><a href="#Empty-array-reuse" class="headerlink" title="Empty array reuse"></a>Empty array reuse</h2><ul>
+<li>重复利用空数组</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/28/Asset-auditing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/28/Asset-auditing/" itemprop="url">
+                  Asset auditing
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-28T17:15:37+08:00">
+                2017-07-28
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-28T18:07:43+08:00">
+                2017-07-28
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Best-practice-guides/" itemprop="url" rel="index">
+                    <span itemprop="name">Best practice guides</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Best-practice-guides/Understanding-optimization-in-Unity/" itemprop="url" rel="index">
+                    <span itemprop="name">Understanding optimization in Unity</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Best-practice-guides/Understanding-optimization-in-Unity/Asset-auditing/" itemprop="url" rel="index">
+                    <span itemprop="name">Asset auditing</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/BestPracticeUnderstandingPerformanceInUnity4.html" target="_blank" rel="external">网址：Asset auditing</a></p>
+<h1 id="Common-Asset-rules"><a href="#Common-Asset-rules" class="headerlink" title="Common Asset rules"></a>Common Asset rules</h1><h2 id="Textures"><a href="#Textures" class="headerlink" title="Textures"></a>Textures</h2><h3 id="Disable-the-read-write-enabled-flag"><a href="#Disable-the-read-write-enabled-flag" class="headerlink" title="Disable the read/write enabled flag"></a>Disable the read/write enabled flag</h3><ul>
+<li>默认是关闭的</li>
+<li>一般需要操控 texture 的 pixel 的时候需要使用到</li>
+</ul>
+<h3 id="Disable-Mipmaps-if-possible"><a href="#Disable-Mipmaps-if-possible" class="headerlink" title="Disable Mipmaps if possible"></a>Disable Mipmaps if possible</h3><ul>
+<li>关掉大概省3分1内存</li>
+<li>对于那些会修改 Z-depth 的，关闭会印象 GPU 采集 Texture</li>
+<li>UI 一般不需要开启</li>
+</ul>
+<h3 id="Compress-all-Textures"><a href="#Compress-all-Textures" class="headerlink" title="Compress all Textures"></a>Compress all Textures</h3><ul>
+<li>如果 Texture Format 在对应平台上无法正常使用，Unity 会解压出来，即耗 CPU 又耗 GPU</li>
+</ul>
+<h3 id="Enforce-sensible-Texture-size-limits"><a href="#Enforce-sensible-Texture-size-limits" class="headerlink" title="Enforce sensible Texture size limits"></a>Enforce sensible Texture size limits</h3><ul>
+<li>手机一般 1024 图集，512 模型就足够了</li>
+</ul>
+<h2 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h2><h3 id="Disable-the-Read-Write-enabled-flag"><a href="#Disable-the-Read-Write-enabled-flag" class="headerlink" title="Disable the Read/Write enabled flag"></a>Disable the Read/Write enabled flag</h3><ul>
+<li>默认开启</li>
+<li>MeshRender 和 Static Batching 都需要开启</li>
+</ul>
+<h3 id="Disable-rigs-on-non-character-models"><a href="#Disable-rigs-on-non-character-models" class="headerlink" title="Disable rigs on non-character models"></a>Disable rigs on non-character models</h3><ul>
+<li>不需要动画的关掉</li>
+</ul>
+<h3 id="Enable-the-Optimize-Game-Objects-option-on-animated-models"><a href="#Enable-the-Optimize-Game-Objects-option-on-animated-models" class="headerlink" title="Enable the Optimize Game Objects option on animated models"></a>Enable the Optimize Game Objects option on animated models</h3><ul>
+<li>开启来优化骨骼，需要的添加到 Extra Transforms</li>
+</ul>
+<h3 id="Use-Mesh-compression-when-possible"><a href="#Use-Mesh-compression-when-possible" class="headerlink" title="Use Mesh compression when possible"></a>Use Mesh compression when possible</h3><ul>
+<li>优化掉精度</li>
+<li>可以针对 channel 来优化，只优化 tangents 和 normals，保留 UVS 和 顶点位置</li>
+</ul>
+<h3 id="Note-Mesh-Renderer-Settings"><a href="#Note-Mesh-Renderer-Settings" class="headerlink" title="Note: Mesh Renderer Settings"></a>Note: Mesh Renderer Settings</h3><ul>
+<li>不需要阴影和投射阴影的关掉，否则会导致 adds a full shadow pass to the rendering loop</li>
+</ul>
+<h2 id="Audio"><a href="#Audio" class="headerlink" title="Audio"></a>Audio</h2><h3 id="Platform-appropriate-compression-settings"><a href="#Platform-appropriate-compression-settings" class="headerlink" title="Platform-appropriate compression settings"></a>Platform-appropriate compression settings</h3><ul>
+<li>Enable a compression format for audio that matches the available hardware. All iOS devices include hardware MP3 decompressors, and many Android devices support Vorbis natively.</li>
+</ul>
+<h3 id="Force-audio-clips-to-mono"><a href="#Force-audio-clips-to-mono" class="headerlink" title="Force audio clips to mono"></a>Force audio clips to mono</h3><ul>
+<li>很少移动设备支持 3D 音效</li>
+<li>强制单通道能减半内存</li>
+</ul>
+<h3 id="Reduce-audio-bitrate"><a href="#Reduce-audio-bitrate" class="headerlink" title="Reduce audio bitrate"></a>Reduce audio bitrate</h3><ul>
+<li>减少比特率，可以减少硬盘和内存消耗</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/28/Optimizations/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/28/Optimizations/" itemprop="url">
+                  Optimizations
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-28T11:20:29+08:00">
+                2017-07-28
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-28T17:13:53+08:00">
+                2017-07-28
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/" itemprop="url" rel="index">
+                    <span itemprop="name">Platform-specific</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/Mobile-Developer-Checklist/" itemprop="url" rel="index">
+                    <span itemprop="name">Mobile Developer Checklist</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/Mobile-Developer-Checklist/Optimizations/" itemprop="url" rel="index">
+                    <span itemprop="name">Optimizations</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/MobileOptimisation.html" target="_blank" rel="external">网址：Optimizations</a></p>
+<h1 id="Focus-on-GPUs"><a href="#Focus-on-GPUs" class="headerlink" title="Focus on GPUs"></a>Focus on GPUs</h1><ul>
+<li>填充率 = 屏幕像素 <em> shader复杂度 </em> overdraw</li>
+</ul>
+<h2 id="Good-practice"><a href="#Good-practice" class="headerlink" title="Good practice"></a>Good practice</h2><ol>
+<li>少用 material，方便 batch</li>
+<li>使用图集，加快载入时间，和方便 batch</li>
+<li>使用 Renderer.sharedMaterial 代替 Renderer.material</li>
+<li>前向像素光很耗<ul>
+<li>使用光照贴图代替</li>
+<li>减少像素光照</li>
+</ul>
+</li>
+<li>测试灯光效果，调节优先次序</li>
+<li>减少使用 cutout</li>
+<li>减少透明混合</li>
+<li>减少多光对同一个物体使用</li>
+<li>减少 pass</li>
+<li>渲染顺序很重要</li>
+<li>Post Processing 很耗</li>
+<li>粒子减少 overdraw，使用简单的 shader</li>
+<li>Double buffer for Meshes modified every frame</li>
+</ol>
+<h2 id="Shader-optimizations"><a href="#Shader-optimizations" class="headerlink" title="Shader optimizations"></a>Shader optimizations</h2><ul>
+<li>使用 alpha 混合代替 alpha 测试</li>
+<li>使用简单的优化的 shader</li>
+<li>减少运算，考虑使用查图代替</li>
+<li>减少精度</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/28/WindowsLowIntegrity/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/28/WindowsLowIntegrity/" itemprop="url">
+                  WindowsLowIntegrity
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-28T10:24:28+08:00">
+                2017-07-28
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-28T10:25:44+08:00">
+                2017-07-28
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/" itemprop="url" rel="index">
+                    <span itemprop="name">Platform-specific</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/Windows/" itemprop="url" rel="index">
+                    <span itemprop="name">Windows</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/Windows/Windows-General/" itemprop="url" rel="index">
+                    <span itemprop="name">Windows General</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/Windows/Windows-General/WindowsLowIntegrity/" itemprop="url" rel="index">
+                    <span itemprop="name">WindowsLowIntegrity</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/WindowsLowIntegrity.html" target="_blank" rel="external">网址：WindowsLowIntegrity</a></p>
+<h1 id="WindowsLowIntegrity"><a href="#WindowsLowIntegrity" class="headerlink" title="WindowsLowIntegrity"></a>WindowsLowIntegrity</h1><p>Windows Standalone player can detect if it’s running at Low Integrity Level (see Microsoft’s documentation on Designing Applications to Run at a Low Integrity Level for more information). In this case, several things happen:</p>
+<ul>
+<li>The log file is written to %USER PROFILE%\AppData\LocalLow\CompanyName\ProductName</li>
+<li>PlayerPrefs is saved to HKCU\Software\AppDataLow\Software\CompanyName\ProductName</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/26/Optimizing-the-size-of-the-built-iOS-player/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/26/Optimizing-the-size-of-the-built-iOS-player/" itemprop="url">
+                  Optimizing the size of the built iOS player
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-26T18:05:32+08:00">
+                2017-07-26
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-27T17:05:24+08:00">
+                2017-07-27
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/" itemprop="url" rel="index">
+                    <span itemprop="name">Platform-specific</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/iOS/iOS-Advanced-Topics/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS Advanced Topics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/iOS/iOS-Advanced-Topics/Optimizing-Performance-in-iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">Optimizing Performance in iOS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/iOS/iOS-Advanced-Topics/Optimizing-Performance-in-iOS/Optimizing-the-size-of-the-built-iOS-player/" itemprop="url" rel="index">
+                    <span itemprop="name">Optimizing the size of the built iOS player</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/iphone-playerSizeOptimization.html" target="_blank" rel="external">网址：Optimizing the size of the built iOS player</a></p>
+<h1 id="iOS-stripping-level"><a href="#iOS-stripping-level" class="headerlink" title="iOS stripping level"></a>iOS stripping level</h1><p>The size optimizations activated by stripping work in the following way:</p>
+<ol>
+<li>Strip assemblies level: the scripts’ bytecode is analyzed so that classes and methods that are not referenced from the scripts can be removed from the DLLs and thereby excluded from the AOT compilation phase. This optimization reduces the size of the main binary and accompanying DLLs and is safe as long as no reflection is used.</li>
+<li>Strip ByteCode level: any .NET DLLs (stored in the Data folder) are stripped down to metadata only. This is possible because all the code is already precompiled during the AOT phase and linked into the main binary.</li>
+<li>Use micro mscorlib level: a special, smaller version of mscorlib is used. Some components are removed from this library, for example, Security, Reflection.Emit, Remoting, non Gregorian calendars, etc. Also, interdependencies between internal components are minimized. This optimization reduces the main binary and mscorlib.dll size but it is not compatible with some System and System.Xml assembly classes, so use it with care.<br>每一层都包含上一层</li>
+</ol>
+<h1 id="Stripping-with-IL2CPP"><a href="#Stripping-with-IL2CPP" class="headerlink" title="Stripping with IL2CPP"></a>Stripping with IL2CPP</h1><h2 id="Simple-checklist-for-making-your-distribution-as-small-as-possible"><a href="#Simple-checklist-for-making-your-distribution-as-small-as-possible" class="headerlink" title="Simple checklist for making your distribution as small as possible"></a>Simple checklist for making your distribution as small as possible</h2><ol>
+<li>压缩贴图和音效</li>
+<li>调高 ios stripping level（难）</li>
+<li>设置 Fast but no exceptions（没人用）</li>
+<li>尽量不要使用 System.dll 和 System.xml.dll</li>
+<li>移除没必要的代码依赖</li>
+<li>使用 .net 2.0 subset</li>
+<li>不使用 JS Array</li>
+<li>不使用 泛型和值类型的结合（引用类型的泛型代码有优化，但是值类型没有）</li>
+</ol>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/26/iOS-Specific-Optimizations/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/26/iOS-Specific-Optimizations/" itemprop="url">
+                  iOS Specific Optimizations
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-26T17:37:34+08:00">
+                2017-07-26
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-26T18:06:02+08:00">
+                2017-07-26
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/" itemprop="url" rel="index">
+                    <span itemprop="name">Platform-specific</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/iOS/iOS-Advanced-Topics/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS Advanced Topics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/iOS/iOS-Advanced-Topics/Optimizing-Performance-in-iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">Optimizing Performance in iOS</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Platform-specific/iOS/iOS-Advanced-Topics/Optimizing-Performance-in-iOS/iOS-Specific-Optimizations/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS Specific Optimizations</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/iphone-iOS-Optimization.html" target="_blank" rel="external">网址：iOS Specific Optimizations</a></p>
+<h1 id="Script-Call-Optimization"><a href="#Script-Call-Optimization" class="headerlink" title="Script Call Optimization"></a>Script Call Optimization</h1><ul>
+<li>大部分调用 UnityEngine 的接口，都会调用到 C，所以效率不高，可以更改 Script Call Optimization* 来做优化</li>
+</ul>
+<h1 id="Setting-the-Desired-Framerate"><a href="#Setting-the-Desired-Framerate" class="headerlink" title="Setting the Desired Framerate"></a>Setting the Desired Framerate</h1><ul>
+<li>默认30帧</li>
+</ul>
+<h1 id="Tuning-Accelerometer-Processing-Frequency"><a href="#Tuning-Accelerometer-Processing-Frequency" class="headerlink" title="Tuning Accelerometer Processing Frequency"></a>Tuning Accelerometer Processing Frequency</h1><ul>
+<li>accelerometer input 不用可以关闭</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/25/Performance-and-Optimization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/25/Performance-and-Optimization/" itemprop="url">
+                  Performance and Optimization
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-25T18:19:28+08:00">
+                2017-07-25
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-26T15:17:38+08:00">
+                2017-07-26
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Animation/" itemprop="url" rel="index">
+                    <span itemprop="name">Animation</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Animation/Performance-and-Optimization/" itemprop="url" rel="index">
+                    <span itemprop="name">﻿Performance and Optimization</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/MecanimPeformanceandOptimization.html" target="_blank" rel="external">网址：﻿Performance and Optimization</a></p>
+<h1 id="Character-Setup"><a href="#Character-Setup" class="headerlink" title="Character Setup"></a>Character Setup</h1><h2 id="Number-of-Bones"><a href="#Number-of-Bones" class="headerlink" title="Number of Bones"></a>Number of Bones</h2><ul>
+<li>减少骨骼数，或者隐藏掉</li>
+</ul>
+<h2 id="Multiple-Skinned-Meshes"><a href="#Multiple-Skinned-Meshes" class="headerlink" title="Multiple Skinned Meshes"></a>Multiple Skinned Meshes</h2><ul>
+<li>合并 Skinned Meshes</li>
+</ul>
+<h1 id="Animation-System"><a href="#Animation-System" class="headerlink" title="Animation System"></a>Animation System</h1><h2 id="Scale-Curves"><a href="#Scale-Curves" class="headerlink" title="Scale Curves"></a>Scale Curves</h2><ul>
+<li>比起位移旋转更加耗时，尽量不用</li>
+</ul>
+<h2 id="Humanoid-vs-Generic-Modes"><a href="#Humanoid-vs-Generic-Modes" class="headerlink" title="Humanoid vs. Generic Modes"></a>Humanoid vs. Generic Modes</h2><ul>
+<li>使用 BodyMask 移除 IK Goals 和 fingers animation 如果不用到的话</li>
+<li>root motion 比较耗，可以的话不要使用</li>
+</ul>
+<h1 id="Runtime-Optimizations"><a href="#Runtime-Optimizations" class="headerlink" title="Runtime Optimizations"></a>Runtime Optimizations</h1><h2 id="Visibility-and-Updates"><a href="#Visibility-and-Updates" class="headerlink" title="Visibility and Updates"></a>Visibility and Updates</h2><ul>
+<li>Culling Mode Base On Renderers</li>
+<li>关闭 skinned mesh renderer’s update</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/25/Audio-Clip/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/25/Audio-Clip/" itemprop="url">
+                  Audio Clip
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-25T11:28:16+08:00">
+                2017-07-25
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-25T15:39:06+08:00">
+                2017-07-25
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Audio/" itemprop="url" rel="index">
+                    <span itemprop="name">Audio</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Audio/Audio-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Audio Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Audio/Audio-Reference/Audio-Clip/" itemprop="url" rel="index">
+                    <span itemprop="name">Audio Clip</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/class-AudioClip.html" target="_blank" rel="external">网址：Audio Clip</a></p>
+<h1 id="Importing-Audio-Assets"><a href="#Importing-Audio-Assets" class="headerlink" title="Importing Audio Assets"></a>Importing Audio Assets</h1><ul>
+<li>PCM，Vorbix/mp3 格式比较好</li>
+<li>PCM 不压缩，Vorbix/mp3 是比 ADPCM 要好的压缩格式</li>
+<li>Vorbix 是比较适用的格式</li>
 </ul>
 <hr>
 
@@ -647,6 +2307,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/UnityManual.io/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/UnityManual.io/page/7/">7</a><a class="extend next" rel="next" href="/UnityManual.io/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -689,7 +2353,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/UnityManual.io/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">68</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -700,7 +2364,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/UnityManual.io/categories/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">111</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
