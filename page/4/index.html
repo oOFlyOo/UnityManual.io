@@ -284,6 +284,238 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/11/ShaderLab-Blending/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unity Manual">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/UnityManual.io/2017/07/11/ShaderLab-Blending/" itemprop="url">
+                  ShaderLab: Blending
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T15:55:46+08:00">
+                2017-07-11
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-07-26T15:03:32+08:00">
+                2017-07-26
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Graphics Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/" itemprop="url" rel="index">
+                    <span itemprop="name">Shader Reference</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/ShaderLab-Syntax/" itemprop="url" rel="index">
+                    <span itemprop="name">ShaderLab Syntax</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/ShaderLab-Syntax/ShaderLab-SubShader/" itemprop="url" rel="index">
+                    <span itemprop="name">ShaderLab SubShader</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/ShaderLab-Syntax/ShaderLab-SubShader/ShaderLab-Pass/" itemprop="url" rel="index">
+                    <span itemprop="name">ShaderLab Pass</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/ShaderLab-Syntax/ShaderLab-SubShader/ShaderLab-Pass/ShaderLab-Blending/" itemprop="url" rel="index">
+                    <span itemprop="name">ShaderLab Blending</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><a href="https://docs.unity3d.com/Manual/SL-Blend.html" target="_blank" rel="external">网址：ShaderLab: Blending</a></p>
+<h1 id="ShaderLab-Blending"><a href="#ShaderLab-Blending" class="headerlink" title="ShaderLab: Blending"></a>ShaderLab: Blending</h1><p><img src="https://docs.unity3d.com/uploads/SL/PipelineBlend.png" alt="PipelineBlend"></p>
+<h1 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h1><ul>
+<li>Blend Off: Turn off blending (this is the default)</li>
+<li>Blend SrcFactor DstFactor: Configure and enable blending. The generated color is multiplied by the SrcFactor. The color already on screen is multiplied by DstFactor and the two are added together.</li>
+<li>Blend SrcFactor DstFactor, SrcFactorA DstFactorA: Same as above, but use different factors for blending the alpha channel.</li>
+<li>BlendOp Op: Instead of adding blended colors together, carry out a different operation on them.</li>
+<li>BlendOp OpColor, OpAlpha: Same as above, but use different blend operation for color (RGB) and alpha (A) channels.</li>
+<li>AlphaToMask On: Turns on alpha-to-coverage. When MSAA is used, alpha-to-coverage modifies multisample coverage mask proportionally to the pixel Shader result alpha value. This is typically used for less aliased outlines than regular alpha test; useful for vegetation and other alpha-tested Shaders.</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/11/ShaderLab-Culling-Depth-Testing/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2328,212 +2560,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://ooflyoo.github.io/UnityManual.io/UnityManual.io/2017/07/10/Accessing-shader-properties-in-Cg-HLSL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Fly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/UnityManual.io/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Unity Manual">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/UnityManual.io/2017/07/10/Accessing-shader-properties-in-Cg-HLSL/" itemprop="url">
-                  Accessing shader properties in Cg/HLSL
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T14:51:25+08:00">
-                2017-07-10
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-07-10T14:53:56+08:00">
-                2017-07-10
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/UnityManual.io/categories/Graphics/" itemprop="url" rel="index">
-                    <span itemprop="name">Graphics</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/" itemprop="url" rel="index">
-                    <span itemprop="name">Graphics Reference</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/" itemprop="url" rel="index">
-                    <span itemprop="name">Shader Reference</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/" itemprop="url" rel="index">
-                    <span itemprop="name">Writing vertex and fragment shaders</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/UnityManual.io/categories/Graphics/Graphics-Reference/Shader-Reference/Writing-vertex-and-fragment-shaders/Accessing-shader-properties-in-Cg-HLSL/" itemprop="url" rel="index">
-                    <span itemprop="name">Accessing shader properties in Cg/HLSL</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<p><a href="https://docs.unity3d.com/Manual/SL-PropertiesInPrograms.html" target="_blank" rel="external">网址：Accessing shader properties in Cg/HLSL</a></p>
-<h1 id="Accessing-shader-properties-in-Cg-HLSL"><a href="#Accessing-shader-properties-in-Cg-HLSL" class="headerlink" title="Accessing shader properties in Cg/HLSL"></a>Accessing shader properties in Cg/HLSL</h1><h2 id="Property-types-in-ShaderLab-map-to-Cg-HLSL-variable-types-this-way"><a href="#Property-types-in-ShaderLab-map-to-Cg-HLSL-variable-types-this-way" class="headerlink" title="Property types in ShaderLab map to Cg/HLSL variable types this way"></a>Property types in ShaderLab map to Cg/HLSL variable types this way</h2><ul>
-<li>Color and Vector properties map to float4, half4 or fixed4 variables.</li>
-<li>Range and Float properties map to float, half or fixed variables.</li>
-<li>Texture properties map to sampler2D variables for regular (2D) textures; Cubemaps map to samplerCUBE; and 3D textures map to sampler3D.</li>
-</ul>
-<hr>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2583,7 +2609,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/UnityManual.io/">
-                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2594,7 +2620,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/UnityManual.io/categories/index.html">
-                <span class="site-state-item-count">111</span>
+                <span class="site-state-item-count">113</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -2658,7 +2684,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

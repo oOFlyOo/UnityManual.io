@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Android Manifest]]></title>
+    <url>%2FUnityManual.io%2F2018%2F01%2F11%2FAndroid-Manifest%2F</url>
+    <content type="text"><![CDATA[网址：Android Manifest How Unity produces the Android Manifest 使用主 Manifest 找到所有插件的 Mainifest 使用 Google’s manifmerger class 来合并 Unity 根据设置修改 Manifest Overriding the Android Manifest Assets/Plugins/Android/AndroidManifest.xml 可以在这里放进一个 Manifest 代替 Unity 的那个 Unity 仅支持 launchMode - singleTask]]></content>
+      <categories>
+        <category>Platform-specific</category>
+        <category>Android</category>
+        <category>Android Manifest</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Special optimizations]]></title>
     <url>%2FUnityManual.io%2F2017%2F07%2F29%2FSpecial-optimizations%2F</url>
     <content type="text"><![CDATA[网址：Special optimizations Multidimensional vs. jagged arrays 使用数组的数组代替多维数组 Particle System pooling 粒子很占内存，所以可以的话尽量通过配置表共用一种粒子来做池 Update managers 减少 Update，尽可能在调用前做判断跳过 Using C# delegates in an update manager C# deleagate 每次 add 和 remove 都会触发深度拷贝，因此考虑用别的类型代替这些操作 Loading thread control 可以单独设置线程的优先度来优化效率 Mass object movement &amp; CullingGroups 优化不显示的物体 Reducing method call overhead for 里面的赋值放到外面 Trivial properties 固定属性值的访问，改为静态，或者只在第一次使用的时候进行计算]]></content>
